@@ -11,6 +11,7 @@ import { IndexComponent } from './index/index.component';
 import { RegisterComponent } from './register/register.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
 import { PatRegisterComponent } from './pat-register/pat-register.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PatRegisterComponent } from './pat-register/pat-register.component';
     IndexComponent,
     RegisterComponent,
     OrgRegisterComponent,
-    PatRegisterComponent
+    PatRegisterComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
