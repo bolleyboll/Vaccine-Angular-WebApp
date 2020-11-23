@@ -12,4 +12,8 @@ export class PatRegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  patientSubmit(patRegForm){
+    
+  }
+
 }
