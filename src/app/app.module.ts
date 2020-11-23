@@ -7,6 +7,7 @@ import { SigninComponent } from './signin/signin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { IndexComponent } from './index/index.component';
 import { RegisterComponent } from './register/register.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
@@ -25,7 +26,8 @@ import { PatRegisterComponent } from './pat-register/pat-register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

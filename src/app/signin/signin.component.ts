@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 import { Login } from '../model/login';
 
 @Component({
@@ -9,14 +10,14 @@ import { Login } from '../model/login';
 export class SigninComponent implements OnInit {
 
   login : Login
-  constructor() {
+  constructor(public auth : AuthService) {
     this.login= new Login()
    }
 
   ngOnInit(): void {
   }
   loginSubmit(loginForm){
-    console.log(this.login)
+    this.auth.signin(this.login)
   }
 
 }
