@@ -1,4 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Login } from '../model/login';
 
@@ -9,12 +11,33 @@ import { Login } from '../model/login';
 })
 export class SigninComponent implements OnInit {
   login: Login;
-  constructor(public auth: AuthService) {
+  roledata: String
+  errorFlag : boolean
+  constructor(public auth: AuthService, public router : Router) {
     this.login = new Login();
+    this.roledata = ''
   }
 
   ngOnInit(): void {}
   loginSubmit(loginForm) {
-    this.auth.signIn(this.login);
+    this.errorFlag = false
+    if(this.roledata==="org")
+    {
+      this.auth.signInOrg(this.login).subscribe(res => (console.log(res)))
+    }
+    else if(this.roledata==="pat"){
+      this.auth.signInPat(this.login).subscribe(res => (console.log(res)))
+    }
+    /*this.auth.signIn(this.login,this.roledata).subscribe(res=>(console.log(res)) {
+      if (res === null) {
+        this.errorFlag = true
+      }
+      else{
+        this.auth.data = res
+        console.log(this.auth.data)
+      }
+    })
+    //this.login = new Login()
+    //loginForm.form.markAsPristine()*/
   }
 }
