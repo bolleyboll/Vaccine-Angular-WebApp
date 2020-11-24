@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { IndexComponent } from './index/index.component';
+import { OrgEditProfileComponent } from './org-edit-profile/org-edit-profile.component';
+import { OrgHomeComponent } from './org-home/org-home.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
 import { PatRegisterComponent } from './pat-register/pat-register.component';
 import { RegisterComponent } from './register/register.component';
@@ -31,6 +33,14 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: 'org/home',
+    component: OrgHomeComponent,
+  },
+  {
+    path: 'org/edit-profile',
+    component: OrgEditProfileComponent,
   },
 ];
 

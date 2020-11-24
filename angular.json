@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "VaccinedB"
+  "defaultProject": "VaccinedB",
+  "cli": {
+    "analytics": false
+  }
 }

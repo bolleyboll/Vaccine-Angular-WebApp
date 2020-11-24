@@ -13,6 +13,8 @@ import { RegisterComponent } from './register/register.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
 import { PatRegisterComponent } from './pat-register/pat-register.component';
 import { AboutComponent } from './about/about.component';
+import { OrgHomeComponent } from './org-home/org-home.component';
+import { OrgEditProfileComponent } from './org-edit-profile/org-edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AboutComponent } from './about/about.component';
     RegisterComponent,
     OrgRegisterComponent,
     PatRegisterComponent,
-    AboutComponent
+    AboutComponent,
+    OrgHomeComponent,
+    OrgEditProfileComponent
   ],
   imports: [
     BrowserModule,
