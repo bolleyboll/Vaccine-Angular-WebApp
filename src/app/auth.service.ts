@@ -1,24 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Login } from './model/login';
+import { Organization } from './model/Organization';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  data : Login
-  constructor(public http: HttpClient) {}
+  data: Login
+  orgdata: Organization
+  constructor(public http: HttpClient) { }
 
   signInOrg(login) {
-      return(this.http.post("http://localhost:8080/org/signin", login))
+    return (this.http.post("http://localhost:8080/org/signin", login))
   }
-    signInPat(login){
-      return(this.http.post("http://localhost:8080/pat/signin", login))
-    }
-  patRegister(){
-
+  signInPat(login) {
+    return (this.http.post("http://localhost:8080/pat/signin", login))
   }
-  orgRegister(){
-    
+  patRegister(pat) {
+    return (this.http.post("http://localhost:8080/pat/signup", pat))
+  }
+  orgRegister(org) {
+    return (this.http.post("http://localhost:8080/org/signup",org))
   }
 }
