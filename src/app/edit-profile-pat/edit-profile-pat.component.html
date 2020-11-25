@@ -4,36 +4,36 @@
         <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="pat.name"
-                placeholder="Enter your name">
+                placeholder="{{auth.currentuser.name}}">
         </div>
         <div class="form-group">
             <label>Email address</label>
-            <input type="text" class="form-control" name="email" placeholder="abc@gmail.com" disabled>
+            <input type="text" class="form-control" name="email" placeholder="{{auth.currentuser.email}}" disabled>
         </div>
         <div class="form-group">
             <label>Disease</label>
             <input type="text" class="form-control" name="disease" #disease="ngModel" [(ngModel)]="pat.disease"
-                placeholder="Enter disease">
+                placeholder="{{auth.currentuser.disease}}">
         </div>
         <div class="form-group">
             <label>Symptoms</label>
             <textarea rows="3" class="form-control" name="symptoms" #symptoms="ngModel" [(ngModel)]="pat.symptoms"
-                placeholder="Enter symptoms"></textarea>
+                placeholder="{{auth.currentuser.symptoms}}"></textarea>
         </div>
         <div class="form-group">
             <label>Medical History</label>
             <textarea rows="3" class="form-control" name="medicalHistory" #medicalHistory="ngModel"
-                [(ngModel)]="pat.medicalHistory" placeholder="Enter previous medical history"></textarea>
+                [(ngModel)]="pat.medicalHistory" placeholder="{{auth.currentuser.medicalHistory}}"></textarea>
         </div>
         <div class="form-group">
             <label>Phone</label>
             <input type="text" class="form-control" name="phone" #phone="ngModel" [(ngModel)]="pat.phone"
-                placeholder="Enter phone number">
+                placeholder="{{auth.currentuser.phone}}">
         </div>
         <div class="form-group">
             <label>Address</label>
             <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="pat.address"
-                placeholder="Enter address">
+                placeholder="{{auth.currentuser.address}}">
         </div>
         <button type="submit" class="btn btn-primary"
             [disabled]="patEditForm.pristin || patEditForm.untouched">Update Profile</button>
