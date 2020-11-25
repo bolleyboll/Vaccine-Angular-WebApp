@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 class="text-center my-5">Delete Profile</h2>
+    <div class="alert alert-dismissible alert-warning">
+        <p class="mb-0">Please authenticate again to delete profile</p>
+    </div>
+    <form (ngSubmit)="deleteSubmit(deleteForm)" #deleteForm="ngForm">
+        <div class="form-group">
+            <label>Email address</label>
+            <input type="text" class="form-control" name="email" placeholder="Enter Email" required />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="passsword" placeholder="Enter Password" required />
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="deleteForm.pristin || deleteForm.invalid">
+            Delete Profile
+        </button>
+    </form>
+</div>
