@@ -49,4 +49,7 @@ export class AuthService {
   showVaccinesOrgName(orgName){
     return (this.http.get("http://localhost:8080/partners"),orgName)
   }
+  getOrg(id){
+    return (this.http.get("http://localhost:8080/org/profile/"+id),httpOptions)
+  }
 }

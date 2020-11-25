@@ -1,3 +1,47 @@
 <div class="alert alert-dismissible alert-primary">
-    <strong>Welcome {{auth.currentuser.name}}</strong>
+  <strong>Welcome User</strong>
+</div>
+<div class="container">
+  <div class="d-flex justify-content-around align-items-center">
+    <div class="d-flex justify-content-around align-items-center ">
+      <p class="my-0">Name</p>
+      <input type="text" class="ml-3" name="name" placeholder="{{this.auth.currentuser.name}}" disabled>
+    </div>
+    <div class="d-flex justify-content-around align-items-center">
+      <p class="my-0">Date Of Birth</p>
+      <input type="text" class="ml-3" name="name" placeholder="{{this.auth.currentuser.dob}}" disabled>
+    </div>
   </div>
+  <div class="d-flex justify-content-around align-items-center mt-5">
+    <div class="d-flex justify-content-around align-items-center ">
+      <p class="my-0">Phone</p>
+      <input type="text" class="ml-3" name="name" placeholder="{{this.auth.currentuser.phone}}" disabled>
+    </div>
+    <div class="d-flex justify-content-around align-items-center">
+      <p class="my-0">Disease</p>
+      <input type="text" class="ml-3" name="name" placeholder="{{this.auth.currentuser.disease}}" disabled>
+    </div>
+  </div>
+
+  <div class="card text-white bg-info mt-5" *ngIf="trial">
+    <div class="card-body">
+      <h4 class="card-title">Your Trials</h4>
+      <div class=" mt-4 d-flex justify-content-left align-items-center ">
+        <p class="my-0">Organization</p>
+        <input type="text" class="ml-3" name="name" placeholder="xyz" disabled>
+      </div>
+      <div class="  mt-2 mb-4 d-flex justify-content-left align-items-center ">
+        <p class="my-0 mr-1">Vaccine</p>
+        <input type="text" class="ml-5" name="name" placeholder="abc" disabled>
+      </div>
+      <button class="btn btn-primary">End Trial</button>
+    </div>
+  </div>
+  <div class="card text-white bg-info mt-5" *ngIf="!trial">
+    <div class="card-body">
+      <h4 class="card-title">Your Trials</h4>
+      <p class="card-text">You are not under any trail</p>
+      <button class="btn btn-primary">Start Trial</button>
+    </div>
+  </div>
+</div>

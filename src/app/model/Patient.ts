@@ -9,6 +9,8 @@ export class Patient{
     phone : String
     address : String
     dob : String
+    orgId: number
+    vaccId: number
     constructor(){
         this.patientsId=0
         this.name = ''
@@ -20,5 +22,7 @@ export class Patient{
         this.phone = ''
         this.address = ''
         this.dob = ''
+        this.orgId=0
+        this.vaccId=0
     }
 }
