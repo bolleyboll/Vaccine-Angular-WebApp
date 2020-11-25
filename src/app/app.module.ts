@@ -21,6 +21,10 @@ import { PatHomeComponent } from './pat-home/pat-home.component';
 import { EditProfilePatComponent } from './edit-profile-pat/edit-profile-pat.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
 import { PatientReportComponent } from './patient-report/patient-report.component';
+import { AddVaccComponent } from './add-vacc/add-vacc.component';
+import { OrgVaccComponent } from './org-vacc/org-vacc.component';
+import { OrgDeleteComponent } from './org-delete/org-delete.component';
+import { VaccEditComponent } from './vacc-edit/vacc-edit.component';
 
 
 @NgModule({
@@ -38,7 +42,11 @@ import { PatientReportComponent } from './patient-report/patient-report.componen
     PatHomeComponent,
     EditProfilePatComponent,
     DeletePatientComponent,
-    PatientReportComponent
+    PatientReportComponent,
+    AddVaccComponent,
+    OrgVaccComponent,
+    OrgDeleteComponent,
+    VaccEditComponent
 
   ],
   imports: [

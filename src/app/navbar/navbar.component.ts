@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Patient } from '../model/Patient';
 
 @Component({
   selector: 'app-navbar',
@@ -8,4 +9,7 @@ import { AuthService } from '../auth.service';
 })
 export class NavbarComponent {
   constructor(public auth : AuthService) {}
+  logout(){
+    this.auth.currentuser = null;
+  }
 }
