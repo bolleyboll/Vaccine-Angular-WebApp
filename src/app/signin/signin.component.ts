@@ -41,7 +41,6 @@ export class SigninComponent implements OnInit {
         }
         else {
           this.auth.currentuser = res
-          console.log(this.auth.currentuser)
           this.router.navigateByUrl("/home/patient")
         }
       })

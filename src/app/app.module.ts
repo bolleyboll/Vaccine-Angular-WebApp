@@ -25,6 +25,9 @@ import { AddVaccComponent } from './add-vacc/add-vacc.component';
 import { OrgVaccComponent } from './org-vacc/org-vacc.component';
 import { OrgDeleteComponent } from './org-delete/org-delete.component';
 import { VaccEditComponent } from './vacc-edit/vacc-edit.component';
+import { PartnerComponent } from './partner/partner.component';
+import { VaccineComponent } from './vaccine/vaccine.component';
+
 
 
 @NgModule({
@@ -46,7 +49,9 @@ import { VaccEditComponent } from './vacc-edit/vacc-edit.component';
     AddVaccComponent,
     OrgVaccComponent,
     OrgDeleteComponent,
-    VaccEditComponent
+    VaccEditComponent,
+    PartnerComponent,
+    VaccineComponent
 
   ],
   imports: [
