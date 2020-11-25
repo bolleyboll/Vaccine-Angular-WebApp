@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class AuthService {
   currentuser : Patient
-  orgdata: Organization
+  currentorg : Organization
   constructor(public http: HttpClient) { }
 
   signInOrg(login) {
@@ -29,7 +29,7 @@ export class AuthService {
     return (this.http.post("http://localhost:8080/patient/signup", pat, httpOptions))
   }
   orgRegister(org) {
-    return (this.http.post("http://localhost:8080/org/signup",org, httpOptions))
+    return (this.http.post("http://localhost:8080/org/signup",org))
   }
   patUpdate(pat){
     return (this.http.put("http://localhost:8080/patient/update",pat, httpOptions))

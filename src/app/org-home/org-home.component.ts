@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-org-home',
@@ -6,5 +7,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./org-home.component.css'],
 })
 export class OrgHomeComponent {
-  constructor() {}
+  constructor(public auth : AuthService) {}
 }

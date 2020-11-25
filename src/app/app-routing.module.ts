@@ -45,7 +45,7 @@ const routes: Routes = [
     component: AboutComponent,
   },
   {
-    path: 'org/home',
+    path: 'home/org',
     component: OrgHomeComponent,
   },
   {

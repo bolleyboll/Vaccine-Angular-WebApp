@@ -21,11 +21,11 @@
       </select>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="loginForm.pristin || loginForm.invalid">
-      Submit
+      Login
     </button>
-    <button class="btn btn-danger">
+    <!--<button class="btn btn-danger">
       <a routerLink="forgotpassword">Forgot Password</a>
-    </button>
+    </button>-->
   </form>
 
   <div class="alert alert-danger my-3" role="alert" *ngIf="errorFlag">

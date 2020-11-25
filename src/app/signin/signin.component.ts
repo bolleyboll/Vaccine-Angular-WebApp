@@ -23,16 +23,15 @@ export class SigninComponent implements OnInit {
   loginSubmit(loginForm) {
     this.errorFlag = false
     if (this.roledata === "org") {
-      /*this.auth.signInOrg(this.login).subscribe((res: any) => {
+      this.auth.signInOrg(this.login).subscribe((res: any) => {
         if (res === null) {
           this.errorFlag = true
         }
         else {
-          this.auth.currentuser = res
-          console.log(this.auth.currentuser)
-          this.router.navigateByUrl("/home/patient")
+          this.auth.currentorg = res
+          this.router.navigateByUrl("/home/org")
         }
-      })*/
+      })
     }
     else if (this.roledata === "pat") {
       this.auth.signInPat(this.login).subscribe((res: any) => {
