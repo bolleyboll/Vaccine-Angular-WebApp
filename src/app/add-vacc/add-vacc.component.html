@@ -1,1 +1,17 @@
-<p>add-vacc works!</p>
+<div class="container">
+    <h2 class="text-center my-5">Edit Profile</h2>
+    <form  #vaccEditForm="ngForm">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="vacc.name"
+                placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label>Disease</label>
+            <input type="text" class="form-control" name="disease" #disease="ngModel" [(ngModel)]="vacc.disease"
+             placeholder="Enter the disease" >
+        </div>
+        
+        <button type="submit" class="btn btn-primary"
+            [disabled]="vaccEditForm.pristin || vaccEditForm.untouched">Add Vaccine</button>
+    </form>

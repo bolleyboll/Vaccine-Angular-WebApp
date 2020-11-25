@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Vaccine } from '../model/Vaccine';
 
 @Component({
   selector: 'app-add-vacc',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddVaccComponent implements OnInit {
 
-  constructor() { }
+  vacc:Vaccine
+
+  constructor() { 
+
+    this.vacc= new Vaccine()
+  }
 
   ngOnInit(): void {
   }
