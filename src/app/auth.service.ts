@@ -32,7 +32,11 @@ export class AuthService {
     return (this.http.post("http://localhost:8080/org/signup",org, httpOptions))
   }
   patUpdate(pat){
-    console.log(pat)
     return (this.http.put("http://localhost:8080/pat/update",pat, httpOptions))
+  }
+  showPartners(){
+    return (this.http.get("http://localhost:8080/partners"))
+  showVaccines(){
+    return (this.http.get("http://localhost:8080/vaccines"))
   }
 }
