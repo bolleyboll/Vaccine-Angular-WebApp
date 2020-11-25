@@ -35,28 +35,21 @@
             <input type="text" class="form-control" name="address" #address="ngModel" [(ngModel)]="pat.address"
                 placeholder="{{auth.currentuser.address}}">
         </div>
-        <button type="submit" class="btn btn-primary"
-            [disabled]="patEditForm.pristin || patEditForm.untouched">Update Profile</button>
+        <button type="submit" class="btn btn-primary" [disabled]="patEditForm.pristin || patEditForm.untouched">Update
+            Profile</button>
     </form>
 
-    <div class="card text-center mt-4" style="width: 320px; margin: auto; position: relative;" *ngIf="successFlag">
-        <div class=" align-items-center text-white py-4" style="background-color: #8BC34A;">
-            <i class="material-icons mt-5" style="font-size: 72px;">
+    <div class="alert alert-success my-3" role="alert" *ngIf="successFlag">
+        <div class="d-flex justify-content-start align-items-center">
+            <i class="material-icons md-28 mr-3" style="font-size: 28px;">
                 check_circle_outline
             </i>
-            <h4 class="mb-5">SUCCESS</h4>
+            <h4 class="alert-heading mb-0">
+                Update Successful
+            </h4>
         </div>
-        <div class="card-body py-5">
-            <p class="card-text mt-3">You have been successfully signed up. Please click on the login button to continue
-            </p>
-            <br>
-            <div class="d-flex text-center justify-content-around mb-3">
-                <a routerLink="/signin" class="text-white btn rounded-pill" style="background-color: #8BC34A;">Login</a>
-                <a routerLink="register/pat" (click)="registerbtn()" class="text-white btn rounded-pill"
-                    style="background-color: #8BC34A;">Sign
-                    Up</a>
-            </div>
-        </div>
+        <hr />
+        <p class="mb-0">Profile Updated Successful</p>
     </div>
     <div class="alert alert-danger my-3" role="alert" *ngIf="errorFlag">
         <div class="d-flex justify-content-start align-items-center">
@@ -64,11 +57,11 @@
                 highlight_off
             </i>
             <h4 class="alert-heading mb-0">
-                Sign up unsuccessfull!
+                Update Unsuccessful
             </h4>
         </div>
         <hr />
-        <p class="mb-0">Patient Already Registered</p>
+        <p class="mb-0">Unable To Update Profile</p>
     </div>
 
 </div>

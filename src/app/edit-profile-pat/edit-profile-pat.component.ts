@@ -13,14 +13,25 @@ export class EditProfilePatComponent implements OnInit {
   successFlag : boolean
   pat : Patient
   constructor(public auth: AuthService) {
-    this.pat = new Patient()
-    this.successFlag = false
-    this.errorFlag = false
+    this.pat = auth.currentuser
    }
 
   ngOnInit(): void {
   }
   patientSubmit(patEditForm){
-
+    this.errorFlag = false
+    this.successFlag = false
+    this.auth.patUpdate(this.pat).subscribe((res: any) => {
+     /* if (res === null) {
+        this.errorFlag = true
+      }
+      else {
+        this.successFlag = true
+        this.auth.currentuser = res
+      }*/
+      console.log(res)
+    })
+    this.pat = this.auth.currentuser
+    patEditForm.form.markAsPristine()
   }
 }

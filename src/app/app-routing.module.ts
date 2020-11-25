@@ -10,12 +10,14 @@ import { OrgEditProfileComponent } from './org-edit-profile/org-edit-profile.com
 import { OrgHomeComponent } from './org-home/org-home.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
 import { OrgVaccComponent } from './org-vacc/org-vacc.component';
+import { PartnerComponent } from './partner/partner.component';
 import { PatHomeComponent } from './pat-home/pat-home.component';
 import { PatRegisterComponent } from './pat-register/pat-register.component';
 import { PatientReportComponent } from './patient-report/patient-report.component';
 import { RegisterComponent } from './register/register.component';
 import { SigninComponent } from './signin/signin.component';
 import { VaccEditComponent } from './vacc-edit/vacc-edit.component';
+import { VaccineComponent } from './vaccine/vaccine.component';
 
 const routes: Routes = [
   {
@@ -81,6 +83,14 @@ const routes: Routes = [
   {
     path : 'org/vacc/add',
     component : AddVaccComponent
+  },
+  {
+    path : 'vaccines',
+    component : VaccineComponent
+  },
+  {
+    path : 'partners',
+    component : PartnerComponent
   }
 ];
 
