@@ -23,10 +23,10 @@
       <li class="nav-item" *ngIf="auth.currentuser">
         <a class="nav-link" routerLink="report/patient">Reports</a>
       </li>
-      <li class="nav-item" *ngIf="auth.currentuser">
-        <button class="btn btn-secondary" routerLink="register" *ngIf="auth.currentuser">Start Trial</button>
+      <li class="nav-item" *ngIf="auth.currentorg">
+        <button class="btn btn-secondary" routerLink="/" *ngIf="auth.currentorg">Start Trial</button>
       </li>
-      <div class="dropdown" *ngIf="auth.currentuser">
+      <div class="dropdown" *ngIf="auth.currentorg">
         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Vaccine
