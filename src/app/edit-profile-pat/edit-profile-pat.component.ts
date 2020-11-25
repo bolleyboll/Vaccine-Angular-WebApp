@@ -22,13 +22,13 @@ export class EditProfilePatComponent implements OnInit {
     this.errorFlag = false
     this.successFlag = false
     this.auth.patUpdate(this.pat).subscribe((res: any) => {
-     /* if (res === null) {
+      if (res === null) {
         this.errorFlag = true
       }
       else {
         this.successFlag = true
         this.auth.currentuser = res
-      }*/
+      }
       console.log(res)
     })
     this.pat = this.auth.currentuser
