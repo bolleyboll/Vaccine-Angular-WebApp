@@ -18,6 +18,20 @@
       <li class="nav-item" *ngIf="auth.currentuser">
         <a class="nav-link" routerLink="report/patient">Reports</a>
       </li>
+      <li class="nav-item" *ngIf="auth.currentuser">
+        <button class="btn btn-secondary" routerLink="register" *ngIf="auth.currentuser">Start Trial</button>
+      </li>
+      <div class="dropdown" *ngIf="auth.currentuser">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Vaccine
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" routerLink="/org/vacc/add">Add Vaccine</a>
+          <a class="dropdown-item" routerLink="/org/vacc/edit">Update Vaccine</a>
+          <a class="dropdown-item" routerLink="/org/vacc">View Vaccines</a>
+        </div>
+      </div>
       <!--
       <li class="nav-item">
         <a class="nav-link" routerLink="org/home">Org Home</a>

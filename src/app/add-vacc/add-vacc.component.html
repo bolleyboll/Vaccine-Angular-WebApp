@@ -3,13 +3,13 @@
     <form  #vaccEditForm="ngForm">
         <div class="form-group">
             <label>Name</label>
-            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="vacc.name"
-                placeholder="Enter your name">
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="vacc.name"placeholder="Enter your name" required>
+            <small class="form-text text-danger" *ngIf="name.dirty && name.invalid">Vaccine name can't be empty</small>
         </div>
         <div class="form-group">
             <label>Disease</label>
-            <input type="text" class="form-control" name="disease" #disease="ngModel" [(ngModel)]="vacc.disease"
-             placeholder="Enter the disease" >
+            <input type="text" class="form-control" name="disease" #disease="ngModel" [(ngModel)]="vacc.disease" placeholder="Enter the disease" required>
+            <small class="form-text text-danger" *ngIf="disease.dirty && disease.invalid">Disease field can't be empty</small>
         </div>
         
         <button type="submit" class="btn btn-primary"

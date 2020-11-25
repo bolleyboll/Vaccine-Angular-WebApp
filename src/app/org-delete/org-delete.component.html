@@ -6,11 +6,13 @@
     <form #deleteForm="ngForm">
         <div class="form-group">
             <label>Email address</label>
-            <input type="text" class="form-control" name="email" placeholder="Enter Email" required />
+            <input type="text" class="form-control" name="email" #email="ngModel" [(ngModel)]= "org.email" placeholder="Enter Email" required />
+            <small class="form-text text-danger" *ngIf="email.dirty && email.invalid">Email field can't be empty</small>
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" name="passsword" placeholder="Enter Password" required />
+            <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)] = "org.password" placeholder="Enter Password" required />
+            <small class="form-text text-danger" *ngIf="password.dirty && password.invalid">Password field can't be empty</small>
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="deleteForm.pristin || deleteForm.invalid">
             Delete Profile

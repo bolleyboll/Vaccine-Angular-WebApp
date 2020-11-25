@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Organization } from '../model/Organization';
 
 @Component({
   selector: 'app-org-delete',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrgDeleteComponent implements OnInit {
 
-  constructor() { }
+  org:Organization
+
+  constructor() {
+
+    this.org = new Organization()
+   }
 
   ngOnInit(): void {
   }
