@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Login } from './model/login';
 import { Organization } from './model/Organization';
 import { Patient } from './model/Patient';
+import { Vaccine } from './model/Vaccine';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,9 +16,14 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class AuthService {
+  public partners: Organization[]
+  public vaccines: Vaccine[]
   currentuser : Patient
   currentorg : Organization
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {
+    this.partners = []
+    this.vaccines = []
+   }
 
   signInOrg(login) {
     return (this.http.post("http://localhost:8080/org/signin", login, httpOptions))
@@ -39,5 +45,8 @@ export class AuthService {
   }
   showVaccines(){
     return (this.http.get("http://localhost:8080/vaccines"))
+  }
+  showVaccinesOrgName(orgName){
+    return (this.http.get("http://localhost:8080/partners"),orgName)
   }
 }

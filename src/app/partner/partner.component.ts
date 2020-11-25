@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Organization } from '../model/Organization';
 
 @Component({
   selector: 'app-partner',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartnerComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit(): void {
+    this.auth.showPartners().subscribe((data: Organization[]) => {
+      this.auth.partners = data
+    })
   }
 
 }

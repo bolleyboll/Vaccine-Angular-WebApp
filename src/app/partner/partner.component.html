@@ -1,1 +1,26 @@
-<p>partner works!</p>
+<!-- <div class="container">
+    <h2 class="text-center my-5">Our Partners</h2>
+    <div class="card my-2" *ngFor="let partner of auth.partners; let i=index">
+        <div class="card-body">
+            <h4 class="card-title">{{partner.name}}</h4>
+            <p class="card-text">{{partner.description}}</p>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <h2 class="text-center my-5">Our Partners</h2>
+    <div class="card my-3" *ngFor="let partner of auth.partners; let i=index">
+        <div class="row no-gutters">
+            <div class="col-auto">
+                <img src="https://www.unicef.org.hk/wp-content/uploads/4000/04/181_UNICEF_ICON_SYRINGES_RGB.png" class="card-img-left" alt="">
+            </div>
+            <div class="col">
+                <div class="card-block px-2 mt-4">
+                    <h4 class="card-title text-primary">{{partner.name}}</h4>
+                    <p class="card-text">{{partner.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

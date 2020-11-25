@@ -1,1 +1,10 @@
-<p>vaccine works!</p>
+<div class="container">
+    <h2 class="text-center my-5">Vaccines</h2>
+    <div class="card my-2 text-white bg-dark mb-3" *ngFor="let vaccine of auth.vaccines; let i=index">
+        <div class="card-body">
+            <h4 class="card-title">Vaccine : {{vaccine.name}}</h4>
+            <p class="card-text">Disease : {{vaccine.disease}}</p>
+            <small class="text-muted">Organization Name : {{orgName.name}}</small>
+        </div>
+    </div>
+</div>
