@@ -23,16 +23,16 @@ export class AuthService {
     return (this.http.post("http://localhost:8080/org/signin", login, httpOptions))
   }
   signInPat(login) {
-    return (this.http.post("http://localhost:8080/pat/signin", login, httpOptions))
+    return (this.http.post("http://localhost:8080/patient/signin", login, httpOptions))
   }
   patRegister(pat) {
-    return (this.http.post("http://localhost:8080/pat/signup", pat, httpOptions))
+    return (this.http.post("http://localhost:8080/patient/signup", pat, httpOptions))
   }
   orgRegister(org) {
     return (this.http.post("http://localhost:8080/org/signup",org, httpOptions))
   }
   patUpdate(pat){
-    return (this.http.put("http://localhost:8080/pat/update",pat, httpOptions))
+    return (this.http.put("http://localhost:8080/patient/update",pat, httpOptions))
   }
   showPartners(){
     return (this.http.get("http://localhost:8080/partners"))
