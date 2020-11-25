@@ -10,29 +10,50 @@
         <a class="nav-link" routerLink="about">About Us</a>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLink="home/patient">Patient Home</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" routerLink="edit/profile/patient">Edit</a>
-          <a class="dropdown-item" routerLink="delete/patient">Delete</a>
-        </div>
-      </li>
-      <li class="nav-item">
+      -->
+
+      <li class="nav-item" *ngIf="auth.currentuser">
         <a class="nav-link" routerLink="report/patient">Reports</a>
       </li>
+      <!--
       <li class="nav-item">
         <a class="nav-link" routerLink="org/home">Org Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="org/edit-profile">Org Edit</a>
       </li>
+      -->
     </ul>
   </div>
   <div class="form-inline my-2 my-lg-0">
-    <button class="btn btn-primary" routerLink="signin">Login</button>
-    <button class="btn btn-secondary" routerLink="register">Register</button>
+    <button class="btn btn-primary" routerLink="signin" *ngIf="!auth.currentuser">Login</button>
+    <button class="btn btn-secondary" routerLink="register" *ngIf="!auth.currentuser">Register</button>
+    <!--
+    <button class="btn btn-secondary" *ngIf="auth.currentuser">
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Profile</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="edit/profile/patient">Edit</a>
+          <a class="dropdown-item" routerLink="delete/patient">Delete</a>
+          <a class="dropdown-item" routerLink="/">Logout</a>
+        </div>
+      </li>
+    </button>
+-->
+    <div class="dropdown" *ngIf="auth.currentuser">
+      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Profile
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" routerLink="edit/profile/patient">Edit</a>
+        <a class="dropdown-item" routerLink="delete/patient">Delete</a>
+        <a class="dropdown-item" routerLink="/">Logout</a>
+      </div>
+    </div>
+
   </div>
 </nav>

@@ -1,8 +1,8 @@
-import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Login } from '../model/login';
+import { Patient } from '../model/Patient';
 
 @Component({
   selector: 'app-signin',
@@ -10,6 +10,7 @@ import { Login } from '../model/login';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
+  currentUser : Patient
   login: Login;
   roledata: String
   errorFlag: boolean
@@ -22,15 +23,16 @@ export class SigninComponent implements OnInit {
   loginSubmit(loginForm) {
     this.errorFlag = false
     if (this.roledata === "org") {
-      this.auth.signInOrg(this.login).subscribe((res: any) => {
+      /*this.auth.signInOrg(this.login).subscribe((res: any) => {
         if (res === null) {
           this.errorFlag = true
         }
         else {
-          this.auth.data = res
-          console.log(this.auth.data)
+          this.auth.currentuser = res
+          console.log(this.auth.currentuser)
+          this.router.navigateByUrl("/home/patient")
         }
-      })
+      })*/
     }
     else if (this.roledata === "pat") {
       this.auth.signInPat(this.login).subscribe((res: any) => {
@@ -38,8 +40,9 @@ export class SigninComponent implements OnInit {
           this.errorFlag = true
         }
         else {
-          this.auth.data = res
-          console.log(this.auth.data)
+          this.auth.currentuser = res
+          console.log(this.auth.currentuser)
+          this.router.navigateByUrl("/home/patient")
         }
       })
     }

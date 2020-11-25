@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Login } from './model/login';
 import { Organization } from './model/Organization';
+import { Patient } from './model/Patient';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  data: Login
+  currentuser : Patient
   orgdata: Organization
   constructor(public http: HttpClient) { }
 

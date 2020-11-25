@@ -1,4 +1,5 @@
 export class Patient{
+    id : number
     name : String;
 	password : String;
     email : String;
@@ -8,6 +9,7 @@ export class Patient{
     phone : String
     address : String
     constructor(){
+        this.id=0
         this.name = ''
         this.password = ''
         this.email = ''
