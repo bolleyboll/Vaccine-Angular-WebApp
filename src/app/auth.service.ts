@@ -51,18 +51,21 @@ export class AuthService {
     return this.http.get("http://localhost:8080/partners")
   }
   getOrg(id) {
-    return this.http.get("http://localhost:8080/org/profile/" + id)
+    return this.http.get("http://localhost:8080/org/" + id)
   }
   addVaccine(vaccine: Vaccine) {
     return this.http.post("http://localhost:8080/vaccine/add", vaccine, httpOptions)
   }
   getResult(id){
-    return this.http.get("http://localhost:8080/patient/"+id+"/report" + id, httpOptions)
+    return this.http.get("http://localhost:8080/patient/"+id+"/report", httpOptions)
   }
   getVacc(id){
-    return this.http.get("http://localhost:8080/vaccines/id/"+id)
+    return this.http.get("http://localhost:8080/vaccine/id/"+id)
   }
   getVaccineByOrgId(id){
     return this.http.get("http://localhost:8080/org/"+id+"/vaccines", httpOptions)
+  }
+  getVaccD(disease){
+    return this.http.get("http://localhost:8080//vaccine/disease/"+disease, httpOptions)
   }
 }

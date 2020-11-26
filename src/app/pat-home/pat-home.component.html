@@ -62,8 +62,8 @@
   </div>
   
   <ul class="list-group mt-5" *ngIf="starttrial">
-    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center">
-      Vaccine Name
+    <li class="list-group-item list-group-item-success d-flex justify-content-between align-items-center" *ngFor="let vaccine of vacc">
+      {{vaccine.disease}}
       <button class="btn btn-primary" (click)= "trialEnroll()">Enroll</button>
     </li>
   </ul>

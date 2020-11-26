@@ -15,6 +15,7 @@ export class PatHomeComponent implements OnInit {
   result : String
   starttrial:boolean
   enroll : boolean
+  vacc : any[]
   constructor(public auth: AuthService) { 
     this.endtrial= false
     this.orgname = ''
@@ -36,8 +37,8 @@ export class PatHomeComponent implements OnInit {
       this.auth.getVacc(this.auth.currentuser.vaccId).subscribe((res: any) => {
         this.vaccname = res.name
       })
-      this.auth.getResult(this.auth.currentuser.patientId).subscribe((res: any) => {
-        this.result = res.result
+      this.auth.getResult(this.auth.currentuser.patientId).subscribe((res: any[]) => {
+        this.result = res[0].result
       })
       this.trial = true
     }
@@ -47,10 +48,12 @@ export class PatHomeComponent implements OnInit {
   }
   startTrial(){
     this.starttrial = true
+    this.auth.getVaccD(this.auth.currentuser.disease).subscribe((res: any[]) => {
+      this.vacc=res
+    })
   }
   trialEnroll(){
     this.enroll = true
     this.starttrial = false
   }
-
 }
