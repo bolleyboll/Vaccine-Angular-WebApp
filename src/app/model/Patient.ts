@@ -1,5 +1,5 @@
 export class Patient{
-    patientsId : number
+    patientId : number
     name : String;
 	password : String;
     email : String;
@@ -12,7 +12,7 @@ export class Patient{
     orgId: number
     vaccId: number
     constructor(){
-        this.patientsId=0
+        this.patientId=0
         this.name = ''
         this.password = ''
         this.email = ''

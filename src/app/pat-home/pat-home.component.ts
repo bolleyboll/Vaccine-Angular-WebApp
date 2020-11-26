@@ -13,15 +13,18 @@ export class PatHomeComponent implements OnInit {
   orgname: String
   vaccname : String
   result : String
+  starttrial:boolean
+  enroll : boolean
   constructor(public auth: AuthService) { 
     this.endtrial= false
     this.orgname = ''
     this.vaccname=''
     this.result=''
+    this.starttrial=false
+    this.enroll = false
   }
 
   ngOnInit(): void {
-    this.endtrial = false
     if(this.auth.currentuser.orgId===null)
     {
       this.trial = false
@@ -33,7 +36,7 @@ export class PatHomeComponent implements OnInit {
       this.auth.getVacc(this.auth.currentuser.vaccId).subscribe((res: any) => {
         this.vaccname = res.name
       })
-      this.auth.getResult(this.auth.currentuser.patientsId).subscribe((res: any) => {
+      this.auth.getResult(this.auth.currentuser.patientId).subscribe((res: any) => {
         this.result = res.result
       })
       this.trial = true
@@ -41,6 +44,13 @@ export class PatHomeComponent implements OnInit {
   }
   endTrial(){
     this.endtrial = true
+  }
+  startTrial(){
+    this.starttrial = true
+  }
+  trialEnroll(){
+    this.enroll = true
+    this.starttrial = false
   }
 
 }
