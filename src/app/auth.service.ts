@@ -52,4 +52,8 @@ export class AuthService {
   getOrg(id){
     return (this.http.get("http://localhost:8080/org/profile/"+id),httpOptions)
   }
+  
+addVaccine(vaccine:Vaccine){
+  return (this.http.post("http://localhost:8080/vaccine/add",vaccine,httpOptions))
+}
 }

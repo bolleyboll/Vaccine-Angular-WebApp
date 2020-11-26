@@ -1,6 +1,6 @@
 <div class="container">
     <h2 class="text-center my-5">Register Vaccine</h2>
-    <form  #vaccEditForm="ngForm">
+    <form  (ngSubmit)="addVaccine(vaccAddForm)" #vaccAddForm="ngForm">
         <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="vacc.name"placeholder="Enter your name" required>
@@ -13,5 +13,28 @@
         </div>
         
         <button type="submit" class="btn btn-primary"
-            [disabled]="vaccEditForm.pristin || vaccEditForm.untouched">Add Vaccine</button>
+            [disabled]="vaccAddForm.pristin || vaccAddForm.untouched">Add Vaccine</button>
     </form>
+    <div class="alert alert-success my-3" role="alert" *ngIf="successFlag">
+        <div class="d-flex justify-content-start align-items-center">
+            <i class="material-icons md-28 mr-3">
+                notifications
+            </i>
+            <h4 class="alert-heading mb-0">
+                Successfully Added the Vaccine.
+            </h4>
+        </div>
+    </div>
+
+    <div class="alert alert-danger my-3" role="alert" *ngIf="errorFlag">
+        <div class="d-flex justify-content-start align-items-center">
+            <i class="material-icons md-28 mr-3">
+                highlight_off
+            </i>
+            <h4 class="alert-heading mb-0">
+                Error in adding the Vaccine
+            </h4>
+        </div>
+    </div>
+
+</div>
