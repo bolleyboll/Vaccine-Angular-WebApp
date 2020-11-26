@@ -46,6 +46,9 @@ export class AuthService {
   showVaccines(){
     return (this.http.get("http://localhost:8080/vaccines"))
   }
+  showReports(){
+    return (this.http.get("http://localhost:8080/reports"))
+  }
   showVaccinesOrgName(orgName){
     return (this.http.get("http://localhost:8080/partners"),orgName)
   }
