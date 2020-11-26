@@ -2,6 +2,13 @@
     <h2 class="text-center my-5">Update Vaccine</h2>
     <form #vaccEditForm="ngForm">
         <div class="form-group">
+            <label>Select the vaccine to be updated</label>
+                <select class="form-control" required>
+                  <option></option>
+                  <option *ngFor="let vacc of auth.vaccs"> {{vacc.name}}</option>
+                </select>
+              </div>
+        <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="vacc.name" placeholder="Enter your name" required>
             <small class="form-text text-danger" *ngIf="name.dirty && name.invalid">Vaccine name can't be empty</small>
