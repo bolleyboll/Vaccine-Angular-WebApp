@@ -18,12 +18,12 @@ const httpOptions = {
 export class AuthService {
   public partners: Organization[]
   public vaccines: Vaccine[]
-  currentuser : Patient
-  currentorg : Organization
+  currentuser: Patient
+  currentorg: Organization
   constructor(public http: HttpClient) {
     this.partners = []
     this.vaccines = []
-   }
+  }
 
   signInOrg(login) {
     return (this.http.post("http://localhost:8080/org/signin", login, httpOptions))
@@ -32,31 +32,36 @@ export class AuthService {
     return (this.http.post("http://localhost:8080/patient/signin", login, httpOptions))
   }
   patRegister(pat) {
-    return (this.http.post("http://localhost:8080/patient/signup", pat, httpOptions))
+    return (this.http.post("http://localhost:8080/patient/signup", pat))
   }
   orgRegister(org) {
-    return (this.http.post("http://localhost:8080/org/signup",org))
+    return (this.http.post("http://localhost:8080/org/signup", org))
   }
-  patUpdate(pat){
-    return (this.http.put("http://localhost:8080/patient/update",pat, httpOptions))
+  patUpdate(pat) {
+    return (this.http.put("http://localhost:8080/patient/update", pat, httpOptions))
   }
-  showPartners(){
+  showPartners() {
     return (this.http.get("http://localhost:8080/partners"))
   }
-  showVaccines(){
+  showVaccines() {
     return (this.http.get("http://localhost:8080/vaccines"))
   }
-  showReports(){
+  showReports() {
     return (this.http.get("http://localhost:8080/reports"))
   }
-  showVaccinesOrgName(orgName){
-    return (this.http.get("http://localhost:8080/partners"),orgName)
+  showVaccinesOrgName(orgName) {
+    return (this.http.get("http://localhost:8080/partners"), orgName)
   }
-  getOrg(id){
-    return (this.http.get("http://localhost:8080/org/profile/"+id),httpOptions)
+  getOrg(id) {
+    return (this.http.get("http://localhost:8080/org/profile/" + id))
   }
-  
-addVaccine(vaccine:Vaccine){
-  return (this.http.post("http://localhost:8080/vaccine/add",vaccine,httpOptions))
-}
+  addVaccine(vaccine: Vaccine) {
+    return (this.http.post("http://localhost:8080/vaccine/add", vaccine, httpOptions))
+  }
+  getResult(id){
+    return (this.http.get("http://localhost:8080/patient/"+id+"/report" + id, httpOptions))
+  }
+  getVacc(id){
+    return(this.http.get("http://localhost:8080/vaccines/"+id))
+  }
 }

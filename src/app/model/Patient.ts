@@ -22,7 +22,6 @@ export class Patient{
         this.phone = ''
         this.address = ''
         this.dob = ''
-        this.orgId=0
-        this.vaccId=0
+        
     }
 }

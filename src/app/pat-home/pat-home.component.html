@@ -23,25 +23,41 @@
     </div>
   </div>
 
-  <div class="card text-white bg-info mt-5" *ngIf="trial">
+  <div class="card text-white bg-info mt-5" *ngIf="trial" >
     <div class="card-body">
       <h4 class="card-title">Your Trials</h4>
       <div class=" mt-4 d-flex justify-content-left align-items-center ">
         <p class="my-0">Organization</p>
-        <input type="text" class="ml-3" name="name" placeholder="xyz" disabled>
+        <input type="text" class="ml-3" placeholder="{{orgname}}" disabled>
+      </div>
+      <div class="  mt-2 d-flex justify-content-left align-items-center ">
+        <p class="my-0 mr-1">Vaccine</p>
+        <input type="text" class="ml-5" placeholder="{{vaccname}}" disabled>
       </div>
       <div class="  mt-2 mb-4 d-flex justify-content-left align-items-center ">
-        <p class="my-0 mr-1">Vaccine</p>
-        <input type="text" class="ml-5" name="name" placeholder="abc" disabled>
+        <p class="my-0 mr-2 pr-1">Result</p>
+        <input type="text" class="ml-5" placeholder="{{result}}" disabled>
       </div>
-      <button class="btn btn-primary">End Trial</button>
+      <button class="btn btn-primary" (click)="endTrial()">End Trial</button>
     </div>
   </div>
   <div class="card text-white bg-info mt-5" *ngIf="!trial">
     <div class="card-body">
       <h4 class="card-title">Your Trials</h4>
-      <p class="card-text">You are not under any trail</p>
+      <p class="card-text">You are not under any trail.</p>
       <button class="btn btn-primary">Start Trial</button>
     </div>
+  </div>
+  <div class="alert alert-success my-3" role="alert" *ngIf="endtrial">
+    <div class="d-flex justify-content-start align-items-center">
+      <i class="material-icons md-28 mr-3" style="font-size: 28px;">
+        check_circle_outline
+      </i>
+      <h4 class="alert-heading mb-0">
+        End Trial Successful
+      </h4>
+    </div>
+    <hr />
+    <p class="mb-0">Your request has been submitted successfully. Our team will get in touch with you soon.</p>
   </div>
 </div>
