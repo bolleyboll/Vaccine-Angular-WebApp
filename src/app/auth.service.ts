@@ -63,7 +63,7 @@ export class AuthService {
     return this.http.get("http://localhost:8080/patient/"+id+"/report" + id, httpOptions)
   }
   getVacc(id){
-    return this.http.get("http://localhost:8080/vaccines/"+id)
+    return this.http.get("http://localhost:8080/vaccines/id/"+id)
   }
   getVaccineByOrgId(id){
     return this.http.get("http://localhost:8080/org/"+id+"/vaccines",httpOptions)
