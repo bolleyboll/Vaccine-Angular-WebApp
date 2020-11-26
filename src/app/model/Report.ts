@@ -10,8 +10,5 @@ export class Report {
     this.reportId = 0;
     this.result = '';
     this.description = '';
-    this.orgId = 0;
-    this.vaccId = 0;
-    this.patientId = 0;
   }
 }

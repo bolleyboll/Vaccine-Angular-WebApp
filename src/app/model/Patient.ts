@@ -4,10 +4,12 @@ export class Patient{
 	password : String;
     email : String;
     disease : String
+    gender: String
     symptoms : String
     medicalHistory : String
     phone : String
     address : String
+    profilePicture: String
     dob : String
     orgId: number
     vaccId: number
@@ -22,6 +24,7 @@ export class Patient{
         this.phone = ''
         this.address = ''
         this.dob = ''
-        
+        this.gender = ''
+        this.profilePicture = ''
     }
 }
