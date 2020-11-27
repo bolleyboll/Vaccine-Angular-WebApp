@@ -7,6 +7,7 @@ import { EditProfilePatComponent } from './edit-profile-pat/edit-profile-pat.com
 import { IndexComponent } from './index/index.component';
 import { OrgDeleteComponent } from './org-delete/org-delete.component';
 import { OrgEditProfileComponent } from './org-edit-profile/org-edit-profile.component';
+import { OrgEndTrialComponent } from './org-end-trial/org-end-trial.component';
 import { OrgHomeComponent } from './org-home/org-home.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
 import { OrgStartTrialComponent } from './org-start-trial/org-start-trial.component';
@@ -96,6 +97,10 @@ const routes: Routes = [
   {
     path: 'start/trial',
     component : OrgStartTrialComponent
+  },
+  {
+    path: 'end/trial',
+    component : OrgEndTrialComponent
   }
 ];
 
