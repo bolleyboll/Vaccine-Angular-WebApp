@@ -21,6 +21,8 @@ export class AuthService {
   currentuser: Patient
   currentorg: Organization
   currentVaccine:Vaccine
+  vaccs:Vaccine[]
+  isLoggedIn: Boolean = false
   constructor(public http: HttpClient) {
     this.partners = []
     this.vaccines = []

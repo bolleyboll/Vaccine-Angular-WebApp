@@ -49,7 +49,7 @@ const routes: Routes = [
     component: OrgHomeComponent,
   },
   {
-    path: 'org/edit-profile',
+    path: 'edit/profile/org',
     component: OrgEditProfileComponent,
   },
   {
