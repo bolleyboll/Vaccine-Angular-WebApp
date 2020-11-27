@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
           <label>Description</label>
-          <textarea type="text" class="form-control" name="description" #phone="ngModel" [(ngModel)]="org.description">
+          <textarea class="form-control" name="description" #description="ngModel" [(ngModel)]="org.description">
             {{auth.currentorg.description}}
           </textarea>
       </div>

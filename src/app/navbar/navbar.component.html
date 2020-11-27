@@ -55,8 +55,9 @@
         Profile
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" routerLink="edit/profile/patient">Edit</a>
-        <a class="dropdown-item" routerLink="delete/patient">Deactivate</a>
+        <a class="dropdown-item" routerLink="/home/patient">My Profile</a>
+        <a class="dropdown-item" routerLink="edit/profile/patient">Edit Profile</a>
+        <a class="dropdown-item bg-danger" routerLink="delete/patient">Deactivate</a>
         <a class="dropdown-item" (click)="logout()" routerLink="/">Logout</a>
       </div>
     </div>
@@ -89,8 +90,9 @@
         Profile
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" routerLink="edit/profile/org">Edit</a>
-        <a class="dropdown-item" routerLink="delete/org">Deactivate</a>
+        <a class="dropdown-item" routerLink="/home/patient">My Profile</a>
+        <a class="dropdown-item" routerLink="edit/profile/org">Edit Profile</a>
+        <a class="dropdown-item bg-danger" routerLink="delete/org">Deactivate</a>
         <a class="dropdown-item" (click)="logout()" routerLink="/">Logout</a>
       </div>
     </div>

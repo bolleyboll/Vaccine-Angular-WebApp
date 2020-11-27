@@ -20,17 +20,17 @@ export class OrgEditProfileComponent {
   orgSubmit(orgEditForm){
     this.errorFlag = false
     this.successFlag = false
-    this.auth.patUpdate(this.org).subscribe((res: any) => {
+    this.auth.orgUpdate(this.org).subscribe((res: any) => {
       if (res === null) {
         this.errorFlag = true
       }
       else {
         this.successFlag = true
         this.auth.currentorg = res
+        this.org = this.auth.currentorg
       }
       console.log(res)
     })
-    this.org = this.auth.currentorg
     orgEditForm.form.markAsPristine()
   }
 }
