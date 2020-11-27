@@ -20,7 +20,7 @@ export class AuthService {
   public vaccines: Vaccine[]
   currentuser: Patient
   currentorg: Organization
-  vaccs:Vaccine[]
+  currentVaccine:Vaccine
   constructor(public http: HttpClient) {
     this.partners = []
     this.vaccines = []

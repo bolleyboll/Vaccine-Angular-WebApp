@@ -17,7 +17,7 @@ export class OrgVaccComponent implements OnInit {
   ngOnInit(): void {
     this.vacc.orgId=this.auth.currentorg.orgId
     this.auth.getVaccineByOrgId(this.vacc.orgId).subscribe((dbVaccine :Vaccine[])=>{
-      this.auth.vaccs=dbVaccine
+      this.auth.vaccines=dbVaccine
     })
   }
 
