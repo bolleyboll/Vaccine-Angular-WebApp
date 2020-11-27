@@ -38,7 +38,7 @@ export class PatHomeComponent implements OnInit {
         this.vaccname = res.name
       })
       this.auth.getResult(this.auth.currentuser.patientId).subscribe((res: any[]) => {
-        this.result = res[0].result
+        this.result = res[res.length-1].result
       })
       this.trial = true
     }
