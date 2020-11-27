@@ -73,4 +73,7 @@ export class AuthService {
   getDistinctDisease(){
     return this.http.get("http://localhost:8080/distinct/disease")
   }
+  orgUpdate(org) {
+    return this.http.put("http://localhost:8080/org/update", org, httpOptions)
+  }
 }

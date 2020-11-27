@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Organization } from '../model/Organization';
 
 @Component({
   selector: 'app-org-edit-profile',
@@ -6,7 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./org-edit-profile.component.css'],
 })
 export class OrgEditProfileComponent {
-  successFlag: boolean = false;
+  errorFlag : boolean
+  successFlag : boolean
+  org : Organization
+  constructor(public auth: AuthService) {
+    this.org = this.auth.currentorg
+   }
 
-  constructor() {}
+  ngOnInit(): void {
+  }
+  orgSubmit(orgEditForm){
+    this.errorFlag = false
+    this.successFlag = false
+    this.auth.patUpdate(this.org).subscribe((res: any) => {
+      if (res === null) {
+        this.errorFlag = true
+      }
+      else {
+        this.successFlag = true
+        this.auth.currentorg = res
+      }
+      console.log(res)
+    })
+    this.org = this.auth.currentorg
+    orgEditForm.form.markAsPristine()
+  }
 }
