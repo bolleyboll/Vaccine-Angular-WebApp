@@ -26,9 +26,11 @@ export class SigninComponent implements OnInit {
       this.auth.signInOrg(this.login).subscribe((res: any) => {
         if (res === null) {
           this.errorFlag = true
+          
         }
         else {
           this.auth.currentorg = res
+          this.auth.isLoggedIn = true
           this.router.navigateByUrl("/home/org")
         }
       })
@@ -40,6 +42,7 @@ export class SigninComponent implements OnInit {
         }
         else {
           this.auth.currentuser = res
+          this.auth.isLoggedIn = true
           this.router.navigateByUrl("/home/patient")
         }
       })
