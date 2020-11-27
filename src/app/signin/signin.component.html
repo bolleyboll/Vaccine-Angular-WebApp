@@ -15,10 +15,17 @@
     </div>
     <div class="form-group">
       <label>Role</label>
-      <select class="form-control" name="roledata" [(ngModel)]="roledata" required>
-        <option value="org">Organization</option>
-        <option value="pat">Patient</option>
+      <select class="form-control st" name="roledata" [(ngModel)]="roledata" required>
+        <option  value="org">Organization</option>
+        <option  value="pat">Patient</option>
       </select>
+      <!--
+      <div class="form-control dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" routerLink="/org/vacc/add">Add Vaccine</a>
+        <a class="dropdown-item" routerLink="/org/vacc/edit">Update Vaccine</a>
+        <a class="dropdown-item" routerLink="/org/vacc">View Vaccines</a>
+      </div>
+      -->
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="loginForm.pristin || loginForm.invalid">
       Login
