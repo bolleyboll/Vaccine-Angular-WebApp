@@ -8,25 +8,34 @@ import { Report } from '../model/Report';
   styleUrls: ['./patient-report.component.css']
 })
 export class PatientReportComponent implements OnInit {
-  orgname: String
-  vacname: String
-  report : Report
-  style: String
+  report: Report
+  num: String
+  errorFlag: boolean
+  patid:number
+  orgid:number
+  vaccid:number
 
-  constructor(public auth: AuthService) { 
+  constructor(public auth: AuthService) {
     this.report = new Report()
+    this.num = ''
   }
 
   ngOnInit(): void {
-    this.auth.getOrg(this.auth.currentuser.orgId).subscribe((res: any) => {
-      this.orgname = res.name
-    })
-    this.auth.getVacc(this.auth.currentuser.vaccId).subscribe((res: any) => {
-      this.vacname = res.name
-    })
     this.auth.getResult(this.auth.currentuser.patientId).subscribe((dbReport: Report[]) => {
-      this.auth.reports = dbReport
+      if (dbReport.length != 0) {
+        this.auth.reports = dbReport
+      }
+      else {
+        this.errorFlag = true
+      }
     })
   }
-
+  setId(id) {
+    this.num = id
+    this.patid=this.auth.reports[id-1].patientId
+    this.orgid=this.auth.reports[id-1].orgId
+    this.vaccid=this.auth.reports[id-1].vaccId
+    this.auth.getOrg(this.orgid).subscribe(res => console.log(res))
+    this.auth.getVacc(this.vaccid).subscribe(res =>console.log(res))
+  }
 }

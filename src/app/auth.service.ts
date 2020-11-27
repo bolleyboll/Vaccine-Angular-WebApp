@@ -82,4 +82,7 @@ export class AuthService {
   vaccUpdate(vacc){
     return this.http.put("http://localhost:8080/vaccine/update", vacc, httpOptions)
   }
+  getPatient(id){
+    return this.http.put("http://localhost:8080/patient/"+id, httpOptions)
+  }
 }
