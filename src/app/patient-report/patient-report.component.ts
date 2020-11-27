@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Report } from '../model/Report';
 
 @Component({
   selector: 'app-patient-report',
@@ -8,23 +9,23 @@ import { AuthService } from '../auth.service';
 })
 export class PatientReportComponent implements OnInit {
   orgname: String
-  result : String
-  description : String
+  vacname: String
+  report : Report
   style: String
 
   constructor(public auth: AuthService) { 
-    this.result = ''
+    this.report = new Report()
   }
 
   ngOnInit(): void {
     this.auth.getOrg(this.auth.currentuser.orgId).subscribe((res: any) => {
       this.orgname = res.name
     })
-    this.auth.getResult(this.auth.currentuser.patientId).subscribe((res: any[]) => {
-      this.result = res[0].result
+    this.auth.getVacc(this.auth.currentuser.vaccId).subscribe((res: any) => {
+      this.vacname = res.name
     })
-    this.auth.getResult(this.auth.currentuser.patientId).subscribe((res: any[]) => {
-      this.description = res[0].description
+    this.auth.getResult(this.auth.currentuser.patientId).subscribe((dbReport: Report[]) => {
+      this.auth.reports = dbReport
     })
   }
 

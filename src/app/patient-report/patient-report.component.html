@@ -1,5 +1,11 @@
 <div class="container">
     <h2 class="text-center my-5">Reports</h2>
+    <div class="form-group">
+        <label>Select Organization</label>
+        <select class="form-control">
+            <option></option>
+        </select>
+    </div>
     <div class="card">
         <div class="card-body text-white bg-dark">
             <h4 class="card-title">Patient Name : {{this.auth.currentuser.name}} </h4>
@@ -8,11 +14,13 @@
         <hr style="color: white; padding: 0px; margin: 0px;">
         <div class="card-body text-white bg-dark">
             <h4 class="card-title">Organization Name : {{orgname}}</h4>
+            <p class="card-text">Vaccine : {{vacname}}</p>
         </div>
         <hr style="color: white; padding: 0px; margin: 0px;">
-        <div class="card-body text-white" [ngStyle]="{'background-color':result === 'Pass' ? '#28a745' : '#dc3545' }">
-            <h4 class="card-title">Result: {{result}} </h4>
-            <p class="card-text">Description : {{description}}</p>
+        <div class="card-body text-white" *ngFor="let report of auth.reports; let i=index" [ngStyle]="{'background-color':report.result === 'Pass' ? '#28a745' : '#dc3545' }">
+            <h4 class="card-title">Result: {{report.result}} </h4>
+            <p class="card-text">Description : {{report.description}}</p>
+            <hr style="color: white; padding: 0px; margin: 0px;">
         </div>
     </div>
 </div>
