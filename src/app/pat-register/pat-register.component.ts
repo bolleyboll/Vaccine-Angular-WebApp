@@ -12,10 +12,14 @@ export class PatRegisterComponent implements OnInit {
   pat: Patient
   errorFlag: boolean
   successFlag: boolean
+  diseases : any[]
   constructor(public auth: AuthService, public router: Router) {
     this.pat = new Patient()
   }
   ngOnInit(): void {
+    this.auth.getDistinctDisease().subscribe((res : any[]) =>{
+      this.diseases=res
+    })
   }
   patientSubmit(patRegForm) {
     this.errorFlag = false
