@@ -37,10 +37,9 @@ export class OrgEndTrialComponent implements OnInit {
         this.patientlist.forEach(patientId => {
           this.auth.getPatient(this.patient.patientId).subscribe((dbPatient :Patient)=>{
             this.patients.push(dbPatient)
+          })
         });
       })
     })
   }
-}
-
 }
