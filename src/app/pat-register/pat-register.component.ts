@@ -24,6 +24,10 @@ export class PatRegisterComponent implements OnInit {
   patientSubmit(patRegForm) {
     this.errorFlag = false
     this.successFlag = false
+    if(patRegForm.password === patRegForm.cpassword){
+      alert("Please enter your password properly. Password and Confirm Password should be same.")
+      return 0;
+    }
     this.auth.patRegister(this.pat).subscribe((res: any) => {
       if (res === null) {
         this.errorFlag = true
