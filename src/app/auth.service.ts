@@ -4,6 +4,7 @@ import { Login } from './model/login';
 import { Organization } from './model/Organization';
 import { Patient } from './model/Patient';
 import { Vaccine } from './model/Vaccine';
+import { Report } from './model/Report';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -18,6 +19,7 @@ const httpOptions = {
 export class AuthService {
   public partners: Organization[]
   public vaccines: Vaccine[]
+  public reports: Report[]
   currentuser: Patient
   currentorg: Organization
   currentVaccine:Vaccine
@@ -26,6 +28,7 @@ export class AuthService {
   constructor(public http: HttpClient) {
     this.partners = []
     this.vaccines = []
+    this.reports = []
   }
 
   signInOrg(login) {
