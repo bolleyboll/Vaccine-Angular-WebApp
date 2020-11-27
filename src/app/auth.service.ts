@@ -76,4 +76,7 @@ export class AuthService {
   orgUpdate(org) {
     return this.http.put("http://localhost:8080/org/update", org, httpOptions)
   }
+  vaccUpdate(vacc){
+    return this.http.put("http://localhost:8080/vaccine/update", vacc, httpOptions)
+  }
 }

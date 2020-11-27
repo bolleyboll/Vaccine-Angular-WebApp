@@ -29,7 +29,6 @@ export class EditProfilePatComponent implements OnInit {
         this.successFlag = true
         this.auth.currentuser = res
       }
-      console.log(res)
     })
     this.pat = this.auth.currentuser
     patEditForm.form.markAsPristine()
