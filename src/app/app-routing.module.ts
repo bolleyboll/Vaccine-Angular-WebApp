@@ -9,6 +9,7 @@ import { OrgDeleteComponent } from './org-delete/org-delete.component';
 import { OrgEditProfileComponent } from './org-edit-profile/org-edit-profile.component';
 import { OrgHomeComponent } from './org-home/org-home.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
+import { OrgStartTrialComponent } from './org-start-trial/org-start-trial.component';
 import { OrgVaccComponent } from './org-vacc/org-vacc.component';
 import { PartnerComponent } from './partner/partner.component';
 import { PatHomeComponent } from './pat-home/pat-home.component';
@@ -91,6 +92,10 @@ const routes: Routes = [
   {
     path : 'partners',
     component : PartnerComponent
+  },
+  {
+    path: 'start/trial',
+    component : OrgStartTrialComponent
   }
 ];
 

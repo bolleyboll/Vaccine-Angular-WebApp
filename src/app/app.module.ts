@@ -27,6 +27,8 @@ import { OrgDeleteComponent } from './org-delete/org-delete.component';
 import { VaccEditComponent } from './vacc-edit/vacc-edit.component';
 import { PartnerComponent } from './partner/partner.component';
 import { VaccineComponent } from './vaccine/vaccine.component';
+import { OrgStartTrialComponent } from './org-start-trial/org-start-trial.component';
+import { OrgEndTrialComponent } from './org-end-trial/org-end-trial.component';
 
 
 
@@ -51,7 +53,9 @@ import { VaccineComponent } from './vaccine/vaccine.component';
     OrgDeleteComponent,
     VaccEditComponent,
     PartnerComponent,
-    VaccineComponent
+    VaccineComponent,
+    OrgStartTrialComponent,
+    OrgEndTrialComponent
 
   ],
   imports: [

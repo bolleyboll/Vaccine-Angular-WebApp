@@ -1,0 +1,21 @@
+<div class="container">
+    <h2 class="text-center my-5">START NEW TRIAL</h2>
+    <form #startForm="ngForm">
+        <div class="form-group">
+            <label>Select the vaccine</label>
+                <select class="form-control" required>
+                  <option></option>
+                  <option *ngFor="let vacc of auth.vaccines">{{vacc.name}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Select the patient</label>
+                    <select class="form-control" required>
+                      <option></option>
+                      <option>patient Name</option>
+                    </select>
+                  </div>
+        <button type="submit" class="btn btn-primary"
+            [disabled]="startForm.pristin || startForm.untouched">Start trial</button>
+    </form>
+</div>
