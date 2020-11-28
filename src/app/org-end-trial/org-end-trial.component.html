@@ -7,13 +7,56 @@
                 <option *ngFor="let vaccine of auth.vaccines">{{vaccine.name}}</option>
             </select>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Select Patient</label>
             <select class="form-control">
                 <option *ngFor="let i of patients">{{i.name}}</option>
             </select>
+        </div> -->
+        <div class="dropdown">
+            <label>Select Patient</label>
+            <a class="btn btn-secondary btn-block dropdown-toggle " type="button" id="dropdownMenuButton"
+                data-toggle="dropdown">
+            </a>
+            <div class="dropdown-menu btn-block">
+                <a *ngFor="let i of patients" class="dropdown-item" (click)="patName(i.name)">{{i.name}}</a>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="patient.name"
+                placeholder="{{patname}}" disabled>
+        </div>
+        <div class="form-group">
+            <label>Gender</label>
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="patient.gender"
+                placeholder="{{gender}}" disabled>
+        </div>
+        <div class="form-group">
+            <label>Disease</label>
+            <input type="text" class="form-control" name="disease" #disease="ngModel" [(ngModel)]="patient.disease"
+                placeholder="{{disname}}" disabled>
+        </div>
+        <div class="form-group">
+            <label>Vaccine</label>
+            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="vaccine.name"
+                placeholder="{{vaccine.name}}" disabled>
+        </div>
+
+        <div class="form-group">
+            <label>Result</label>
+            <input type="text" class="form-control" name="result" #result="ngModel" [(ngModel)]="repo.result"
+                placeholder="Enter Result" required>
+            <small class="form-text text-danger" *ngIf="result.dirty && result.invalid">Result cannot be empty</small>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea rows="3" class="form-control" name="description" #description="ngModel"
+                [(ngModel)]="repo.description" placeholder="Enter Description" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="endForm.pristin || endForm.untouched">End
             Trial</button>
+
     </form>
 </div>
