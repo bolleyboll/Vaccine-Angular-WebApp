@@ -3,26 +3,33 @@
     <form #endForm="ngForm">
         <div class="form-group">
             <label>Select Vaccine</label>
-            <select class="form-control">
-                <option *ngFor="let vaccine of auth.vaccines">{{vaccine.name}}</option>
-            </select>
-        </div>
-        <!-- <div class="form-group">
-            <label>Select Patient</label>
-            <select class="form-control">
-                <option *ngFor="let i of patients">{{i.name}}</option>
-            </select>
-        </div> -->
-        <div class="dropdown">
-            <label>Select Patient</label>
-            <a class="btn btn-secondary btn-block dropdown-toggle " type="button" id="dropdownMenuButton"
-                data-toggle="dropdown">
-            </a>
-            <div class="dropdown-menu btn-block">
-                <a *ngFor="let i of patients" class="dropdown-item" (click)="patName(i.name)">{{i.name}}</a>
+            <div class="dropdown">
+                <a class="btn btn-secondary btn-block d-flex align-items-center justify-content-between"
+                    style="background-color:lightgrey;" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                    {{vacname}}
+                    <i class="material-icons">
+                        arrow_drop_down
+                    </i>
+                </a>
+                <div class="dropdown-menu btn-block">
+                    <a *ngFor="let vacc of auth.vaccines" class="dropdown-item"
+                        (click)="vaccName(vacc.name)">{{vacc.name}}</a>
+                </div>
             </div>
         </div>
 
+        <div class="form-group">
+            <label>Select Patient</label>
+            <div class="dropdown">
+                <a class="btn btn-secondary btn-block dropdown-toggle" style="background-color:lightgrey;" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown">
+                </a>
+                <div class="dropdown-menu btn-block">
+                    <a *ngFor="let pat of patients" class="dropdown-item" (click)="patName(pat.name)">{{pat.name}}</a>
+                </div>
+            </div>
+        </div>
+        <!--
         <div class="form-group">
             <label>Name</label>
             <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="patient.name"
@@ -57,6 +64,6 @@
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="endForm.pristin || endForm.untouched">End
             Trial</button>
-
+        -->
     </form>
 </div>
