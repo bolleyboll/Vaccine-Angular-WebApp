@@ -13,13 +13,14 @@
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="pat.password"
+            <input type="password" class="form-control" id="pass" name="password" #password="ngModel" [(ngModel)]="pat.password"
                 placeholder="Password" required>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label>Confirm Password</label>
-            <input type="password" class="form-control" name="cpassword" placeholder="Re-enter your Password" required>
-        </div>
+            <input type="password" class="form-control" id="cpass" name="cpassword" placeholder="Re-enter your Password" (keyup)="validatePass()" required>
+            <label [(ngModel)]="confPassError" name="error"></label>
+        </div> -->
         <div class="form-group">
             <label>Date Of Birth</label>
             <input type="date" class="form-control" name="dob" #dob="ngModel" [(ngModel)]="pat.dob" required>

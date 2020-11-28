@@ -21,7 +21,7 @@ export class OrgRegisterComponent implements OnInit {
   registerOrg(regForm){
     this.errorFlag = false
     this.successFlag = false
-    if(regForm.password === regForm.cpassword){
+    if(regForm.password != regForm.cpassword){
       alert("Please enter your password properly. Password and Confirm Password should be same.")
       return 0;
     }
