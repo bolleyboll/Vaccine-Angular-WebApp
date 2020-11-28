@@ -21,6 +21,7 @@ export class OrgStartTrialComponent implements OnInit {
   patname:string
   vaccid :number
   successFlag:boolean
+  errorFlag:boolean
 
   constructor( public auth: AuthService) {
     this.vacc=new Vaccine()
@@ -45,7 +46,7 @@ export class OrgStartTrialComponent implements OnInit {
 
     this.patname=pats
     for(let i=0;i<this.patients.length;i++){
-      if(pats===this.patients[i].name){
+      if(this.patname===this.patients[i].name){
         this.resultPat=this.patients[i]
         this.resultRep.patientId=this.patients[i].patientId
         break
@@ -69,13 +70,18 @@ export class OrgStartTrialComponent implements OnInit {
     });
   }
   startTrial(){
-    console.log(this.resultPat)
-    console.log(this.resultRep)
+    this.successFlag=false
+    this.errorFlag=false
     this.auth.patUpdate(this.resultPat).subscribe((res:any)=>{
       console.log(res)
+      if(res==null){
+        this.errorFlag=true
+      }
+      else{
+        this.successFlag=true
+      }
     })
     this.auth.addReport(this.resultRep).subscribe((data:any)=>{
-      console.log(data)
     })
     this.patname=''
   }
