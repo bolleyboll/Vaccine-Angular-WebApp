@@ -98,4 +98,8 @@ export class AuthService {
   getPatientByOrgId(id){
     return this.http.get("http://localhost:8080/org/"+id+"/patients", httpOptions)
   }
+  updateReport(report)
+  {
+    return this.http.put("http://localhost:8080/report/update",report, httpOptions)
+  }
 }

@@ -21,6 +21,7 @@ export class OrgStartTrialComponent implements OnInit {
   vaccid :number
   successFlag:boolean
   errorFlag:boolean
+  successful:boolean
 
   constructor( public auth: AuthService) {
     this.vacc=new Vaccine()
@@ -33,7 +34,7 @@ export class OrgStartTrialComponent implements OnInit {
 
   ngOnInit(): void {
     this.vacc.orgId=this.auth.currentorg.orgId
-    this.resultPat.orgId=this.auth.currentorg.orgId
+    //this.resultPat.orgId=this.auth.currentorg.orgId
     this.resultRep.orgId=this.auth.currentorg.orgId
     this.resultRep.result="Under Trial"
     this.auth.getVaccineByOrgId(this.vacc.orgId).subscribe((dbVaccine :Vaccine[])=>{
@@ -56,6 +57,7 @@ export class OrgStartTrialComponent implements OnInit {
   }
 
   vaccName(name){
+    this.successful=false
     this.vacname=name
     this.auth.vaccines.forEach(v => {
       if(this.vacname===v.name){
@@ -63,6 +65,10 @@ export class OrgStartTrialComponent implements OnInit {
         this.resultRep.vaccId=v.vaccId
         this.vacc.disease=v.disease
         this.auth.getPatientsByDisease(this.vacc.disease).subscribe((data:Patient[])=>{
+          if(data.length==0)
+          {
+            this.successful=true
+          }
           this.patients=data
         })
       }   
@@ -72,7 +78,6 @@ export class OrgStartTrialComponent implements OnInit {
     this.successFlag=false
     this.errorFlag=false
     this.auth.patUpdate(this.resultPat).subscribe((res:any)=>{
-      console.log(res)
       if(res==null){
         this.errorFlag=true
       }
