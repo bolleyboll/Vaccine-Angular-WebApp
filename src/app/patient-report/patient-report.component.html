@@ -3,16 +3,16 @@
     <div class="form-group">
         <label>Select A Report</label>
         <div class="dropdown">
-            <a class="btn btn-secondary btn-block d-flex align-items-center justify-content-between" style="background-color:lightgrey;" type="button" id="dropdownMenuButton"
-                data-toggle="dropdown">
+            <a class="btn btn-secondary btn-block d-flex align-items-center justify-content-between"
+                style="background-color:lightgrey;" type="button" id="dropdownMenuButton" data-toggle="dropdown">
                 Report No: {{num}}
                 <i class="material-icons ">
                     arrow_drop_down
                 </i>
             </a>
             <div class="dropdown-menu btn-block">
-                <a *ngFor="let rep of auth.reports; let id=index" (click)="setId(id+1)" class="dropdown-item"
-                    >Report No: {{id+1}}</a>
+                <a *ngFor="let rep of auth.reports; let id=index" (click)="setId(id+1)" class="dropdown-item">Report No:
+                    {{id+1}}</a>
             </div>
         </div>
     </div>
@@ -35,4 +35,69 @@
         </div>
     </div>
     -->
+    <div class="list-group mt-5" *ngIf="successFlag">
+        <div class="card bg-secondary mb-3">
+            <div class="card-header">Personal Details</div>
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between">
+                    <label class="my-0">Name</label>
+                    <input type="text" class="form-control ml-4" value="{{auth.currentuser.name}}" disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">Email </label>
+                    <input type="text" class="form-control" style="margin-left: 27px;"
+                        value="{{auth.currentuser.email}}" disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">Gender</label>
+                    <input type="text" class="form-control" style="margin-left: 15px;"
+                        value="{{auth.currentuser.gender}}" disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">DOB</label>
+                    <input type="text" class="form-control" style="margin-left: 33px;" value="{{auth.currentuser.dob}}"
+                        disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">Phone</label>
+                    <input type="text" class="form-control" style="margin-left: 22px;"
+                        value="{{auth.currentuser.phone}}" disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">Address</label>
+                    <input type="text" class="form-control ml-2" value="{{auth.currentuser.address}}" disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">Disease</label>
+                    <input type="text" class="form-control" style="margin-left: 11px;"
+                        value="{{auth.currentuser.disease}}" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="card bg-secondary mb-3">
+            <div class="card-header">Trial Details</div>
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">Organization</label>
+                    <input type="text" class="form-control" style="margin-left: 11px;" value="{{orgdetail.name}}"
+                        disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0">Vaccine</label>
+                    <input type="text" class="form-control ml-5" value="{{vaccdetail.name}}" disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0" style="margin-right: 10px;">Result</label>
+                    <input type="text" class="form-control ml-5 {{textcolor}}" value="{{report.result}}" disabled>
+                </div>
+                <div class="d-flex align-items-center justify-content-around mt-2">
+                    <label class="my-0 mr-1">Details</label>
+                    <input type="text" class="form-control ml-5" value="{{report.description}}" disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-dismissible alert-info mt-5" *ngIf="errorFlag">
+        <strong>No Reports Are Available</strong>
+    </div>
 </div>
