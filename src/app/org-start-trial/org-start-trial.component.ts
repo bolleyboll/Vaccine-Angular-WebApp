@@ -1,4 +1,3 @@
-import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Patient } from '../model/Patient';
@@ -85,5 +84,4 @@ export class OrgStartTrialComponent implements OnInit {
     })
     this.patname=''
   }
-
 }

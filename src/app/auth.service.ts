@@ -87,9 +87,12 @@ export class AuthService {
     return this.http.get("http://localhost:8080/unenrolledpatients/"+disease, httpOptions)
   }
   getPatient(id){
-    return this.http.put("http://localhost:8080/patient/"+id, httpOptions)
+    return this.http.get("http://localhost:8080/patient/"+id, httpOptions)
   }
   addReport(rep){
     return this.http.post("http://localhost:8080/report/add",rep,httpOptions)
+  }
+  getVacReport(id){
+    return this.http.get("http://localhost:8080/report/vaccine/"+id,httpOptions)
   }
 }
