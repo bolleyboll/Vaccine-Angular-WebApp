@@ -95,4 +95,7 @@ export class AuthService {
   getVacReport(id){
     return this.http.get("http://localhost:8080/report/vaccine/"+id,httpOptions)
   }
+  getPatientByOrgId(id){
+    return this.http.get("http://localhost:8080/org/"+id+"/patients", httpOptions)
+  }
 }
