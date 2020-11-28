@@ -89,4 +89,7 @@ export class AuthService {
   getPatient(id){
     return this.http.put("http://localhost:8080/patient/"+id, httpOptions)
   }
+  addReport(rep){
+    return this.http.post("http://localhost:8080/report/add",rep,httpOptions)
+  }
 }
