@@ -25,6 +25,7 @@ export class OrgEndTrialComponent implements OnInit {
     this.patient = new Patient()
     this.repo = new Report()
     this.patientlist = []
+    this.patients = []
     this.patname = ''
     this.disname = ''
     this.gender = ''
@@ -35,7 +36,8 @@ export class OrgEndTrialComponent implements OnInit {
     this.auth.getVaccineByOrgId(this.vaccine.orgId).subscribe((dbVaccine: Vaccine[]) => {
       this.auth.vaccines = dbVaccine
     })
-   
+    
+    console.log(this.patient.patientId)
     this.auth.getResult(this.patient.patientId).subscribe((dbReport: Report[]) => {
       console.log(dbReport)
       dbReport.forEach((res: Report) => {

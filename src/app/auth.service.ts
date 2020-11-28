@@ -92,4 +92,7 @@ export class AuthService {
   addReport(rep){
     return this.http.post("http://localhost:8080/report/add",rep,httpOptions)
   }
+  getPatientByOrgId(id){
+    return this.http.get("http://localhost:8080/org/"+id+"/patients", httpOptions)
+  }
 }
