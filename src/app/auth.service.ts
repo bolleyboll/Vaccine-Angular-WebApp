@@ -86,4 +86,7 @@ export class AuthService {
   getPatientsByDisease(disease){
     return this.http.get("http://localhost:8080/unenrolledpatients/"+disease, httpOptions)
   }
+  getPatient(id){
+    return this.http.put("http://localhost:8080/patient/"+id, httpOptions)
+  }
 }

@@ -1,11 +1,22 @@
 <div class="container">
     <h2 class="text-center my-5">Reports</h2>
     <div class="form-group">
-        <label>Select Organization</label>
-        <select class="form-control">
-            <option></option>
-        </select>
+        <label>Select A Report</label>
+        <div class="dropdown">
+            <a class="btn btn-secondary btn-block d-flex align-items-center justify-content-between" style="background-color:lightgrey;" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown">
+                Report No: {{num}}
+                <i class="material-icons ">
+                    arrow_drop_down
+                </i>
+            </a>
+            <div class="dropdown-menu btn-block">
+                <a *ngFor="let rep of auth.reports; let id=index" (click)="setId(id+1)" class="dropdown-item"
+                    >Report No: {{id+1}}</a>
+            </div>
+        </div>
     </div>
+    <!--
     <div class="card">
         <div class="card-body text-white bg-dark">
             <h4 class="card-title">Patient Name : {{this.auth.currentuser.name}} </h4>
@@ -23,4 +34,5 @@
             <hr style="color: white; padding: 0px; margin: 0px;">
         </div>
     </div>
+    -->
 </div>
