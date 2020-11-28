@@ -12,7 +12,7 @@ export class OrgVaccComponent implements OnInit {
   vacc:Vaccine
   patients: Patient[]
   patname: String[]
-
+  id:number
   constructor(public auth:AuthService) {
     this.vacc= new Vaccine()
     this.patients = []
@@ -28,6 +28,7 @@ export class OrgVaccComponent implements OnInit {
   }
 
   patName(vaccId: number){
+    this.id=vaccId
     this.patname = []
     this.auth.getPatientByOrgId(this.auth.currentorg.orgId).subscribe((dbPatient :Patient[])=>{
       this.patients=dbPatient
@@ -37,7 +38,6 @@ export class OrgVaccComponent implements OnInit {
           this.patname.push(element.name)
         }
       });
-      console.log(this.patname)
     })
   }
 }
