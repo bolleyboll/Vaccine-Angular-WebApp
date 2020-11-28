@@ -1,18 +1,27 @@
 <div class="container">
     <h2 class="text-center my-5">START NEW TRIAL</h2>
     <form #startForm="ngForm">
-        <div class="form-group">
-            <label>Select the vaccine</label>
-                <select class="form-control" required>
-                  <option></option>
-                  <option *ngFor="let vacc of auth.vaccines">{{vacc.name}}</option>
-                </select>
-              </div>
+    <div class="form-group">
+            <label>Select the vaccine </label>
+            <div class="dropdown">
+                <a class="btn btn-secondary btn-block" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown">
+                    {{vacname}}
+                    <i class="material-icons">
+                      arrow_drop_down
+                    </i>
+                </a>
+                <div class="dropdown-menu btn-block">
+                    <a *ngFor="let vacc of auth.vaccines" class="dropdown-item"
+                        (click)="vaccName(vacc.name)">{{vacc.name}}</a>
+                </div>
+            </div>
+        </div>
               <div class="form-group">
                 <label>Select the patient</label>
                     <select class="form-control" required>
                       <option></option>
-                      <option>patient Name</option>
+                      <option *ngFor="let pat of patients">{{pat.name}}</option>
                     </select>
                   </div>
         <button type="submit" class="btn btn-primary"

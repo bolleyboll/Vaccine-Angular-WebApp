@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Patient } from '../model/Patient';
 import { Vaccine } from '../model/Vaccine';
 
 @Component({
@@ -10,9 +11,14 @@ import { Vaccine } from '../model/Vaccine';
 export class OrgStartTrialComponent implements OnInit {
 
   vacc :Vaccine
+  pat:Patient
+  vacname:string
+  patients:Patient[]
 
   constructor( public auth: AuthService) {
     this.vacc=new Vaccine()
+    this.pat= new Patient()
+    this.vacname=''
    }
 
   ngOnInit(): void {
@@ -21,6 +27,21 @@ export class OrgStartTrialComponent implements OnInit {
       this.auth.vaccines=dbVaccine
       console.log(this.auth.vaccines)
     })
+  }
+
+  vaccName(name){
+    this.vacname=name
+    this.auth.vaccines.forEach(v => {
+      if(this.vacname===v.name){
+        this.vacc.disease=v.disease
+        this.auth.getPatientsByDisease(this.vacc.disease).subscribe((data:Patient[])=>{
+          this.patients=data
+        })
+      }
+      
+    });
+
+    
   }
 
 }

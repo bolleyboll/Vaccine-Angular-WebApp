@@ -20,6 +20,7 @@ export class AuthService {
   public partners: Organization[]
   public vaccines: Vaccine[]
   public reports: Report[]
+  patients:Patient[]
   currentuser: Patient
   currentorg: Organization
   currentVaccine:Vaccine
@@ -81,5 +82,8 @@ export class AuthService {
   }
   vaccUpdate(vacc){
     return this.http.put("http://localhost:8080/vaccine/update", vacc, httpOptions)
+  }
+  getPatientsByDisease(disease){
+    return this.http.get("http://localhost:8080/unenrolledpatients/"+disease, httpOptions)
   }
 }
