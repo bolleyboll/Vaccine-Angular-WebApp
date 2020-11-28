@@ -47,6 +47,7 @@ export class OrgStartTrialComponent implements OnInit {
     for(let i=0;i<this.patients.length;i++){
       if(pats===this.patients[i].name){
         this.resultPat=this.patients[i]
+        this.resultRep.patientId=this.patients[i].patientId
         break
       }
     }
@@ -68,13 +69,15 @@ export class OrgStartTrialComponent implements OnInit {
     });
   }
   startTrial(){
+    console.log(this.resultPat)
+    console.log(this.resultRep)
     this.auth.patUpdate(this.resultPat).subscribe((res:any)=>{
       console.log(res)
     })
     this.auth.addReport(this.resultRep).subscribe((data:any)=>{
       console.log(data)
     })
-
+    this.patname=''
   }
 
 }
