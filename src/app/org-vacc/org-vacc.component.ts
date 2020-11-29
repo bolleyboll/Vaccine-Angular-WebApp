@@ -46,9 +46,14 @@ export class OrgVaccComponent implements OnInit {
       });
     console.log(this.patname);
   }
-  hideOthers(i) {
-    console.log(i)
-    let collapseExample = document.getElementsByClassName('collapsing');
-    console.log(collapseExample);
+  hideOthers(id) {
+    console.log(id)
+    let btnlist = document.getElementsByClassName('collapsebtn');
+    for (var i = btnlist.length - 1; i >= 0; i--) {
+      if (btnlist[i] != id) {
+       btnlist[i].click();
+      }
+     }
+    console.log(btnlist);
   }
 }

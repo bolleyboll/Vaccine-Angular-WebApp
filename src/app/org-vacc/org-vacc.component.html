@@ -5,8 +5,8 @@
             <h4 class="card-title">Vaccine : {{vacc.name}}</h4>
             <p class="card-text">Disease : {{vacc.disease}}</p>
             <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#patList{{vacc.vaccId}}" role="button"
-                    aria-expanded="false" aria-controls="patList{{i}}" (click)="patName(vacc.vaccId);hideOthers(vacc.vaccId);">
+                <a class="btn btn-primary collapse" data-toggle="collapse" href="#patList{{vacc.vaccId}}" id="{{vacc.vaccId}" role="button"
+                    aria-expanded="false" aria-controls="patList{{i}}" (click)="hideOthers(vacc.vaccId);patName(vacc.vaccId);">TYPE 
                     View Patients
                 </a>
             </p>            
