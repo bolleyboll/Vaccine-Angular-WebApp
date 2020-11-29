@@ -13,8 +13,13 @@ export class OrgRegisterComponent implements OnInit {
   org : Organization
   errorFlag : boolean
   successFlag : boolean
+  error: string;
+  errorStyle: string;
+
   constructor(public auth: AuthService, public router: Router) { 
     this.org = new Organization()
+    this.error = 'The password does not match.';
+    this.errorStyle = 'form-text text-danger';
   }
   ngOnInit(): void {
   }
@@ -39,5 +44,18 @@ export class OrgRegisterComponent implements OnInit {
   registerbtn(){
     this.successFlag = false
   }
-
+  validatePass() {
+    let pass: string = (<HTMLInputElement>document.getElementById('pass'))
+      .value;
+    let cpass: string = (<HTMLInputElement>document.getElementById('cpass'))
+      .value;
+    console.log(pass, cpass);
+    if (pass === cpass) {
+      this.error = 'The passwords match.';
+      this.errorStyle = 'form-text text-success';
+    } else {
+      this.error = 'The passwords do not match.';
+      this.errorStyle = 'form-text text-danger';
+    }
+  }
 }

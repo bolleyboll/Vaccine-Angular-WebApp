@@ -29,6 +29,8 @@ import { PartnerComponent } from './partner/partner.component';
 import { VaccineComponent } from './vaccine/vaccine.component';
 import { OrgStartTrialComponent } from './org-start-trial/org-start-trial.component';
 import { OrgEndTrialComponent } from './org-end-trial/org-end-trial.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -62,7 +64,8 @@ import { OrgEndTrialComponent } from './org-end-trial/org-end-trial.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

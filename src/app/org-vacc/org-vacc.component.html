@@ -5,13 +5,13 @@
             <h4 class="card-title">Vaccine : {{vacc.name}}</h4>
             <p class="card-text">Disease : {{vacc.disease}}</p>
             <p>
-                <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample+{{id}}" role="button"
-                    aria-expanded="false" aria-controls="collapseExample" (click)="patName(vacc.vaccId)">
+                <a class="btn btn-primary" data-toggle="collapse" href="#patList{{vacc.vaccId}}" role="button"
+                    aria-expanded="false" aria-controls="patList{{i}}" (click)="patName(vacc.vaccId);hideOthers(vacc.vaccId);">
                     View Patients
                 </a>
             </p>            
         </div>
-        <div class="collapse" id="collapseExample+{{id}}">
+        <div class="collapse collapsing" id="patList{{vacc.vaccId}}">
             <div class="card card-body" *ngFor="let pat of patname">
                 <h5 class="mb-1">Patient name: {{pat}}</h5>
             </div>

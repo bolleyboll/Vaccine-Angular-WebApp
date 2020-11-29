@@ -12,11 +12,14 @@ export class PatRegisterComponent implements OnInit {
   pat: Patient;
   errorFlag: boolean;
   successFlag: boolean;
-  confPassError: string;
   diseases: any[];
+  error: string;
+  errorStyle: string;
+
   constructor(public auth: AuthService, public router: Router) {
     this.pat = new Patient();
-    this.confPassError = '';
+    this.error = '';
+    this.errorStyle = 'form-text text-danger';
   }
   ngOnInit(): void {
     this.auth.getDistinctDisease().subscribe((res: any[]) => {
@@ -45,6 +48,12 @@ export class PatRegisterComponent implements OnInit {
     let cpass: string = (<HTMLInputElement>document.getElementById('cpass'))
       .value;
     console.log(pass, cpass);
-    if (pass != cpass) this.confPassError = "The passwords don't match.";
+    if (pass === cpass) {
+      this.error = 'The passwords match.';
+      this.errorStyle = 'form-text text-success';
+    } else {
+      this.error = 'The passwords do not match.';
+      this.errorStyle = 'form-text text-danger';
+    }
   }
 }
