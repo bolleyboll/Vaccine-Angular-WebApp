@@ -67,6 +67,10 @@ export class OrgEndTrialComponent implements OnInit {
               this.patients.push(pat)
             })
           }
+          else{
+            this.errorFlag=true
+            this.patients=[]
+          }
         });
       }
     })

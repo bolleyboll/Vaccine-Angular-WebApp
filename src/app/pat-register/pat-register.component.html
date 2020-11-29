@@ -21,17 +21,18 @@
             <small class="form-text text-warning" *ngIf="password.invalid && password.dirty">Password can't be
                 empty</small>
         </div>
-        <div class="form-group">
 
-        <!-- <div class="form-group">
+        <div class="form-group">
             <label>Confirm Password</label>
-            <input type="password" class="form-control" id="cpass" name="cpassword" placeholder="Re-enter your Password" (keyup)="validatePass()" required>
+            <input type="password" class="form-control" id="cpass" name="cpassword" placeholder="Re-enter your Password"
+                (keyup)="validatePass()" required>
             <small [class]="errorStyle" id="confPassError">{{error}}</small>
         </div>
         <div class="form-group">
             <label>Date Of Birth</label>
             <input type="date" class="form-control" name="dob" #dob="ngModel" [(ngModel)]="pat.dob" required>
-            <small class="form-text text-warning" *ngIf="dob.invalid && dob.dirty">Date Of Birth can't be empty</small>
+            <small class="form-text text-warning" *ngIf="dob.invalid && dob.dirty">Date Of Birth can't be
+                empty</small>
         </div>
 
         <div class="form-group">
@@ -52,9 +53,6 @@
 
         <div class="form-group">
             <label>Disease</label>
-            <!--
-            <input type="text" class="form-control" name="disease" #disease="ngModel" [(ngModel)]="pat.disease"
-                placeholder="Enter disease" required>-->
             <select class="form-control" name="disease" #disease="ngModel" [(ngModel)]="pat.disease" required>
                 <option *ngFor="let dis of diseases" [value]="dis">{{dis}}</option>
             </select>
@@ -74,7 +72,8 @@
             <label>Medical History</label>
             <textarea rows="3" class="form-control" name="medicalHistory" #medicalHistory="ngModel"
                 [(ngModel)]="pat.medicalHistory" placeholder="Enter previous medical history" required></textarea>
-            <small class="form-text text-warning" *ngIf="medicalHistory.invalid && medicalHistory.dirty">Medical History
+            <small class="form-text text-warning" *ngIf="medicalHistory.invalid && medicalHistory.dirty">Medical
+                History
                 can't be empty</small>
         </div>
 

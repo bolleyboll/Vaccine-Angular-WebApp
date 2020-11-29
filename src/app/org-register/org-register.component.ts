@@ -18,7 +18,7 @@ export class OrgRegisterComponent implements OnInit {
 
   constructor(public auth: AuthService, public router: Router) { 
     this.org = new Organization()
-    this.error = 'The password does not match.';
+    this.error = '';
     this.errorStyle = 'form-text text-danger';
   }
   ngOnInit(): void {
