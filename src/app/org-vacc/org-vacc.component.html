@@ -10,18 +10,20 @@
       <!-- <p>
         <a
           class="btn btn-primary"
-          
+          data-toggle="collapse"
+          href="#patList{{ vacc.vaccId }}"
+          role="button"
+          aria-expanded="false"
+          aria-controls="patList{{ i }}"
           (click)="patName(vacc.vaccId)"
-        >
-          Patients:
-          <label *ngFor="let pat of patname"> {{ pat }} </label>
+          >View Patients
         </a>
       </p> -->
+      <!-- <div class="collapse collapsing" id="patList{{ vacc.vaccId }}">
+        <div class="card card-body" *ngFor="let pat of patname">
+          <h5 class="mb-1">Patient name: {{ pat }}</h5>
+        </div>
+      </div> -->
     </div>
-    <!-- <div class="collapse collapsing" id="patList{{ vacc.vaccId }}">
-      <div class="card card-body" *ngFor="let pat of patname">
-        <h5 class="mb-1">Patient name: {{ pat }}</h5>
-      </div>
-    </div> -->
   </div>
 </div>
