@@ -29,7 +29,7 @@ export class OrgEditProfileComponent {
         this.auth.currentorg = res
         this.org = this.auth.currentorg
       }
-      console.log(res)
+      // console.log(res)
     })
     orgEditForm.form.markAsPristine()
   }

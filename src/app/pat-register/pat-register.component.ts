@@ -47,7 +47,7 @@ export class PatRegisterComponent implements OnInit {
       .value;
     let cpass: string = (<HTMLInputElement>document.getElementById('cpass'))
       .value;
-    console.log(pass, cpass);
+    // console.log(pass, cpass);
     if (pass === cpass) {
       this.error = 'The passwords match.';
       this.errorStyle = 'form-text text-success';

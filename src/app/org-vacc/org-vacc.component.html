@@ -1,20 +1,27 @@
 <div class="container">
-    <h2 class="text-center my-5">Vaccines</h2>
-    <div class="card my-2 text-white bg-dark mb-3" *ngFor="let vacc of auth.vaccines; let i=index">
-        <div class="card-body">
-            <h4 class="card-title">Vaccine : {{vacc.name}}</h4>
-            <p class="card-text">Disease : {{vacc.disease}}</p>
-            <p>
-                <a class="btn btn-primary collapse" data-toggle="collapse" href="#patList{{vacc.vaccId}}" id="{{vacc.vaccId}" role="button"
-                    aria-expanded="false" aria-controls="patList{{i}}" (click)="hideOthers(vacc.vaccId);patName(vacc.vaccId);">TYPE 
-                    View Patients
-                </a>
-            </p>            
-        </div>
-        <div class="collapse collapsing" id="patList{{vacc.vaccId}}">
-            <div class="card card-body" *ngFor="let pat of patname">
-                <h5 class="mb-1">Patient name: {{pat}}</h5>
-            </div>
-        </div>
+  <h2 class="text-center my-5">Vaccines</h2>
+  <div
+    class="card my-2 text-white bg-dark mb-3"
+    *ngFor="let vacc of auth.vaccines; let i = index"
+  >
+    <div class="card-body">
+      <h4 class="card-title">Vaccine : {{ vacc.name }}</h4>
+      <p class="card-text">Disease : {{ vacc.disease }}</p>
+      <!-- <p>
+        <a
+          class="btn btn-primary"
+          
+          (click)="patName(vacc.vaccId)"
+        >
+          Patients:
+          <label *ngFor="let pat of patname"> {{ pat }} </label>
+        </a>
+      </p> -->
     </div>
+    <!-- <div class="collapse collapsing" id="patList{{ vacc.vaccId }}">
+      <div class="card card-body" *ngFor="let pat of patname">
+        <h5 class="mb-1">Patient name: {{ pat }}</h5>
+      </div>
+    </div> -->
+  </div>
 </div>

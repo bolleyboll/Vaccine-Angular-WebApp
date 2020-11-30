@@ -22,8 +22,8 @@ export class OrgDeleteComponent implements OnInit {
   }
 
   deleteSubmit(deleteForm){
-    console.log(this.del)
-    console.log(this.auth.currentorg)
+    // console.log(this.del)
+    // console.log(this.auth.currentorg)
     this.errorFlag = false
     this.successFlag =false
     if((this.del.email===this.auth.currentorg.email)&&(this.del.password===this.auth.currentorg.password))
@@ -36,6 +36,6 @@ export class OrgDeleteComponent implements OnInit {
     }
     this.del = new Login()
     deleteForm.form.markAsPristine()
-    console.log(this.successFlag,this.errorFlag)
+    // console.log(this.successFlag,this.errorFlag)
   }
 }

@@ -27,7 +27,7 @@ export class OrgVaccComponent implements OnInit {
       .getVaccineByOrgId(this.vacc.orgId)
       .subscribe((dbVaccine: Vaccine[]) => {
         this.auth.vaccines = dbVaccine;
-        console.log(this.auth.vaccines);
+        // console.log(this.auth.vaccines);
       });
   }
 
@@ -44,16 +44,6 @@ export class OrgVaccComponent implements OnInit {
           }
         });
       });
-    console.log(this.patname);
-  }
-  hideOthers(id) {
-    console.log(id)
-    let btnlist = document.getElementsByClassName('collapsebtn');
-    for (var i = btnlist.length - 1; i >= 0; i--) {
-      if (btnlist[i] != id) {
-       btnlist[i].click();
-      }
-     }
-    console.log(btnlist);
+    // console.log(this.patname);
   }
 }
