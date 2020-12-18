@@ -8,9 +8,8 @@ describe('EditProfilePatComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditProfilePatComponent ]
-    })
-    .compileComponents();
+      declarations: [EditProfilePatComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

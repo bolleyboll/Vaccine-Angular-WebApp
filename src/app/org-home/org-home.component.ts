@@ -7,5 +7,5 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./org-home.component.css'],
 })
 export class OrgHomeComponent {
-  constructor(public auth : AuthService) {}
+  constructor(public auth: AuthService) {}
 }

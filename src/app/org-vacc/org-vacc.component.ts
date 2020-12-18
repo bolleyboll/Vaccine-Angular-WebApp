@@ -13,7 +13,7 @@ export class OrgVaccComponent implements OnInit {
   patients: Patient[];
   patname: String[];
   id: number;
-  patListStyle: string
+  patListStyle: string;
 
   constructor(public auth: AuthService) {
     this.vacc = new Vaccine();
@@ -27,7 +27,6 @@ export class OrgVaccComponent implements OnInit {
       .getVaccineByOrgId(this.vacc.orgId)
       .subscribe((dbVaccine: Vaccine[]) => {
         this.auth.vaccines = dbVaccine;
-        // console.log(this.auth.vaccines);
       });
   }
 
@@ -44,6 +43,5 @@ export class OrgVaccComponent implements OnInit {
           }
         });
       });
-    // console.log(this.patname);
   }
 }

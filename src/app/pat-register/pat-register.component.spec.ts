@@ -8,9 +8,8 @@ describe('PatRegisterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PatRegisterComponent ]
-    })
-    .compileComponents();
+      declarations: [PatRegisterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -15,63 +15,108 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/vaccines">Vaccines</a>
       </li>
-      
+
       <li class="nav-item" *ngIf="auth.currentuser">
         <a class="nav-link" routerLink="report/patient">Reports</a>
       </li>
     </ul>
 
-  <div class="form-inline my-2 my-lg-0">
-    <button class="btn btn-primary" routerLink="signin" *ngIf="!this.auth.isLoggedIn">Login</button>
-    <button class="btn btn-secondary" routerLink="register" *ngIf="!this.auth.isLoggedIn">Register</button>
-    <div class="dropdown" *ngIf="auth.currentuser">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Profile
+    <div class="form-inline my-2 my-lg-0">
+      <button
+        class="btn btn-primary"
+        routerLink="signin"
+        *ngIf="!this.auth.isLoggedIn"
+      >
+        Login
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" routerLink="/home/patient">My Profile</a>
-        <a class="dropdown-item" routerLink="edit/profile/patient">Edit Profile</a>
-        <a class="dropdown-item text-danger" routerLink="delete/patient">Deactivate</a>
-        <a class="dropdown-item" (click)="logout()" routerLink="/">Logout</a>
+      <button
+        class="btn btn-secondary"
+        routerLink="register"
+        *ngIf="!this.auth.isLoggedIn"
+      >
+        Register
+      </button>
+      <div class="dropdown" *ngIf="auth.currentuser">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Profile
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" routerLink="/home/patient">My Profile</a>
+          <a class="dropdown-item" routerLink="edit/profile/patient">
+            Edit Profile
+          </a>
+          <a class="dropdown-item text-danger" routerLink="delete/patient">
+            Deactivate
+          </a>
+          <a class="dropdown-item" (click)="logout()" routerLink="/">Logout</a>
+        </div>
       </div>
-    </div>
     </div>
 
     <div class="dropdown" *ngIf="auth.currentorg">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">Trials</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" routerLink="/start/trial">Start Trial</a>
-          <a class="dropdown-item" routerLink="/end/trial">End Trial</a>
-        </div>
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Trials
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" routerLink="/start/trial">Start Trial</a>
+        <a class="dropdown-item" routerLink="/end/trial">End Trial</a>
+      </div>
     </div>
     <div class="dropdown" *ngIf="auth.currentorg">
       <div class="dropdown" *ngIf="auth.currentorg">
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
+        <button
+          class="btn btn-primary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
           Vaccine
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" routerLink="/org/vacc/add">Add Vaccine</a>
-          <a class="dropdown-item" routerLink="/org/vacc/edit">Update Vaccine</a>
+          <a class="dropdown-item" routerLink="/org/vacc/edit"
+            >Update Vaccine</a
+          >
           <a class="dropdown-item" routerLink="/org/vacc">View Vaccines</a>
         </div>
       </div>
     </div>
 
     <div class="dropdown" *ngIf="auth.currentorg">
-      <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
         Profile
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" routerLink="/home/org">My Profile</a>
         <a class="dropdown-item" routerLink="edit/profile/org">Edit Profile</a>
-        <a class="dropdown-item text-danger" routerLink="delete/org">Deactivate</a>
+        <a class="dropdown-item text-danger" routerLink="delete/org"
+          >Deactivate</a
+        >
         <a class="dropdown-item" (click)="logout()" routerLink="/">Logout</a>
       </div>
     </div>
-
   </div>
 </nav>

@@ -10,44 +10,40 @@ import { Patient } from '../model/Patient';
   styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
-  currentUser : Patient
+  currentUser: Patient;
   login: Login;
-  roledata: String
-  errorFlag: boolean
+  roledata: String;
+  errorFlag: boolean;
   constructor(public auth: AuthService, public router: Router) {
     this.login = new Login();
-    this.roledata = ''
+    this.roledata = '';
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
   loginSubmit(loginForm) {
-    this.errorFlag = false
-    if (this.roledata === "org") {
+    this.errorFlag = false;
+    if (this.roledata === 'org') {
       this.auth.signInOrg(this.login).subscribe((res: any) => {
         if (res === null) {
-          this.errorFlag = true
-          
+          this.errorFlag = true;
+        } else {
+          this.auth.currentorg = res;
+          this.auth.isLoggedIn = true;
+          this.router.navigateByUrl('/home/org');
         }
-        else {
-          this.auth.currentorg = res
-          this.auth.isLoggedIn = true
-          this.router.navigateByUrl("/home/org")
-        }
-      })
-    }
-    else if (this.roledata === "pat") {
+      });
+    } else if (this.roledata === 'pat') {
       this.auth.signInPat(this.login).subscribe((res: any) => {
         if (res === null) {
-          this.errorFlag = true
+          this.errorFlag = true;
+        } else {
+          this.auth.currentuser = res;
+          this.auth.isLoggedIn = true;
+          this.router.navigateByUrl('/home/patient');
         }
-        else {
-          this.auth.currentuser = res
-          this.auth.isLoggedIn = true
-          this.router.navigateByUrl("/home/patient")
-        }
-      })
+      });
     }
-    this.login = new Login()
-    loginForm.form.markAsPristine()
+    this.login = new Login();
+    loginForm.form.markAsPristine();
   }
 }

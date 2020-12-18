@@ -55,53 +55,53 @@ const routes: Routes = [
     component: OrgEditProfileComponent,
   },
   {
-    path : 'home/patient',
-    component : PatHomeComponent
+    path: 'home/patient',
+    component: PatHomeComponent,
   },
   {
-    path : 'edit/profile/patient',
-    component : EditProfilePatComponent
+    path: 'edit/profile/patient',
+    component: EditProfilePatComponent,
   },
   {
-    path : 'delete/patient',
-    component : DeletePatientComponent
+    path: 'delete/patient',
+    component: DeletePatientComponent,
   },
   {
-    path : 'report/patient',
-    component : PatientReportComponent
+    path: 'report/patient',
+    component: PatientReportComponent,
   },
   {
-    path : 'delete/org',
-    component : OrgDeleteComponent
+    path: 'delete/org',
+    component: OrgDeleteComponent,
   },
   {
-    path : 'org/vacc',
-    component : OrgVaccComponent
+    path: 'org/vacc',
+    component: OrgVaccComponent,
   },
   {
-    path : 'org/vacc/edit',
-    component : VaccEditComponent
+    path: 'org/vacc/edit',
+    component: VaccEditComponent,
   },
   {
-    path : 'org/vacc/add',
-    component : AddVaccComponent
+    path: 'org/vacc/add',
+    component: AddVaccComponent,
   },
   {
-    path : 'vaccines',
-    component : VaccineComponent
+    path: 'vaccines',
+    component: VaccineComponent,
   },
   {
-    path : 'partners',
-    component : PartnerComponent
+    path: 'partners',
+    component: PartnerComponent,
   },
   {
     path: 'start/trial',
-    component : OrgStartTrialComponent
+    component: OrgStartTrialComponent,
   },
   {
     path: 'end/trial',
-    component : OrgEndTrialComponent
-  }
+    component: OrgEndTrialComponent,
+  },
 ];
 
 @NgModule({

@@ -8,9 +8,8 @@ describe('OrgEditProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrgEditProfileComponent ]
-    })
-    .compileComponents();
+      declarations: [OrgEditProfileComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

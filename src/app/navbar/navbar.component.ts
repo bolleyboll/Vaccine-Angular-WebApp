@@ -8,8 +8,8 @@ import { Patient } from '../model/Patient';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor(public auth : AuthService) {}
-  logout(){
+  constructor(public auth: AuthService) {}
+  logout() {
     this.auth.currentuser = null;
     this.auth.currentorg = null;
     this.auth.isLoggedIn = false;

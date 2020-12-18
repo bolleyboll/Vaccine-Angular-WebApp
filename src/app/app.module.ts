@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { IndexComponent } from './index/index.component';
 import { RegisterComponent } from './register/register.component';
 import { OrgRegisterComponent } from './org-register/org-register.component';
@@ -32,8 +32,6 @@ import { OrgEndTrialComponent } from './org-end-trial/org-end-trial.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,17 +55,18 @@ import { environment } from '../environments/environment';
     PartnerComponent,
     VaccineComponent,
     OrgStartTrialComponent,
-    OrgEndTrialComponent
-
+    OrgEndTrialComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

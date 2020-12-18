@@ -8,29 +8,27 @@ import { Organization } from '../model/Organization';
   styleUrls: ['./org-edit-profile.component.css'],
 })
 export class OrgEditProfileComponent {
-  errorFlag : boolean
-  successFlag : boolean
-  org : Organization
+  errorFlag: boolean;
+  successFlag: boolean;
+  org: Organization;
   constructor(public auth: AuthService) {
-    this.org = this.auth.currentorg
-   }
-
-  ngOnInit(): void {
+    this.org = this.auth.currentorg;
   }
-  orgSubmit(orgEditForm){
-    this.errorFlag = false
-    this.successFlag = false
+
+  ngOnInit(): void {}
+  orgSubmit(orgEditForm) {
+    this.errorFlag = false;
+    this.successFlag = false;
     this.auth.orgUpdate(this.org).subscribe((res: any) => {
       if (res === null) {
-        this.errorFlag = true
-      }
-      else {
-        this.successFlag = true
-        this.auth.currentorg = res
-        this.org = this.auth.currentorg
+        this.errorFlag = true;
+      } else {
+        this.successFlag = true;
+        this.auth.currentorg = res;
+        this.org = this.auth.currentorg;
       }
       // console.log(res)
-    })
-    orgEditForm.form.markAsPristine()
+    });
+    orgEditForm.form.markAsPristine();
   }
 }

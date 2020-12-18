@@ -6,29 +6,28 @@ import { Login } from '../model/login';
 @Component({
   selector: 'app-delete-patient',
   templateUrl: './delete-patient.component.html',
-  styleUrls: ['./delete-patient.component.css']
+  styleUrls: ['./delete-patient.component.css'],
 })
 export class DeletePatientComponent implements OnInit {
-  del: Login
-  errorFlag: boolean
-  successFlag : boolean
+  del: Login;
+  errorFlag: boolean;
+  successFlag: boolean;
   constructor(public auth: AuthService, public router: Router) {
-    this.del = new Login()
+    this.del = new Login();
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   deleteSubmit(deleteForm) {
-    this.errorFlag = false
-    this.successFlag =false
-    if((this.del.email===this.auth.currentuser.email)&&(this.del.password===this.auth.currentuser.password))
-    {
-        this.successFlag = true
+    this.errorFlag = false;
+    this.successFlag = false;
+    if (
+      this.del.email === this.auth.currentuser.email &&
+      this.del.password === this.auth.currentuser.password
+    ) {
+      this.successFlag = true;
+    } else {
+      this.errorFlag = true;
     }
-    else
-    {
-      this.errorFlag = true
-    }
-    this.del = new Login()
-    deleteForm.form.markAsPristine()
+    this.del = new Login();
+    deleteForm.form.markAsPristine();
   }
 }

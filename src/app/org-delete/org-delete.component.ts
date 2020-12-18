@@ -7,35 +7,34 @@ import { Organization } from '../model/Organization';
 @Component({
   selector: 'app-org-delete',
   templateUrl: './org-delete.component.html',
-  styleUrls: ['./org-delete.component.css']
+  styleUrls: ['./org-delete.component.css'],
 })
 export class OrgDeleteComponent implements OnInit {
-  del: Login
-  errorFlag: boolean
-  successFlag : boolean
+  del: Login;
+  errorFlag: boolean;
+  successFlag: boolean;
 
   constructor(public auth: AuthService, public router: Router) {
-    this.del = new Login()
-   }
-
-  ngOnInit(): void {
+    this.del = new Login();
   }
 
-  deleteSubmit(deleteForm){
+  ngOnInit(): void {}
+
+  deleteSubmit(deleteForm) {
     // console.log(this.del)
     // console.log(this.auth.currentorg)
-    this.errorFlag = false
-    this.successFlag =false
-    if((this.del.email===this.auth.currentorg.email)&&(this.del.password===this.auth.currentorg.password))
-    {
-        this.successFlag = true
+    this.errorFlag = false;
+    this.successFlag = false;
+    if (
+      this.del.email === this.auth.currentorg.email &&
+      this.del.password === this.auth.currentorg.password
+    ) {
+      this.successFlag = true;
+    } else {
+      this.errorFlag = true;
     }
-    else
-    {
-      this.errorFlag = true
-    }
-    this.del = new Login()
-    deleteForm.form.markAsPristine()
+    this.del = new Login();
+    deleteForm.form.markAsPristine();
     // console.log(this.successFlag,this.errorFlag)
   }
 }

@@ -8,9 +8,8 @@ describe('OrgDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrgDeleteComponent ]
-    })
-    .compileComponents();
+      declarations: [OrgDeleteComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

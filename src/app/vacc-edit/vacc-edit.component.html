@@ -1,69 +1,87 @@
 <div class="container">
-    <h2 class="text-center my-5">Update Vaccine</h2>
-    <form (ngSubmit)="editVacc(vaccEditForm)" #vaccEditForm="ngForm">
-        <div class="form-group">
-            <label>Select the vaccine to be updated</label>
-            <!--
-            <select class="form-control" required>
-                <option *ngFor="let vacc of auth.vaccines">
-                    <button class="btn btn-secondry" (click)="vaccName(vacc.name)">
-                        {{vacc.name}}
-                    </button>
-                </option>
-                <option class="btn btn-secondry" (click)="vaccName(vacc.name)" *ngFor="let vacc of auth.vaccines"
-                    [value]="vacc.name">{{vacc.name}}</option>
-                
-            </select>
-            -->
-            <div class="dropdown">
-                <a class="btn btn-secondary btn-block dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown">
-                </a>
-                <div class="dropdown-menu btn-block">
-                    <a *ngFor="let vacc of auth.vaccines" class="dropdown-item"
-                        (click)="vaccName(vacc.name)">{{vacc.name}}</a>
-                </div>
-            </div>
+  <h2 class="text-center my-5">Update Vaccine</h2>
+  <form (ngSubmit)="editVacc(vaccEditForm)" #vaccEditForm="ngForm">
+    <div class="form-group">
+      <label>Select the vaccine to be updated</label>
+      <div class="dropdown">
+        <a
+          class="btn btn-secondary btn-block dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+        >
+        </a>
+        <div class="dropdown-menu btn-block">
+          <a
+            *ngFor="let vacc of auth.vaccines"
+            class="dropdown-item"
+            (click)="vaccName(vacc.name)"
+          >
+            {{ vacc.name }}
+          </a>
         </div>
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="vacc.name"
-                placeholder="{{vaccname}}" required>
-            <small class="form-text text-danger" *ngIf="name.dirty && name.invalid">Vaccine name can't be empty</small>
-        </div>
-        <div class="form-group">
-            <label>Disease</label>
-            <input type="text" class="form-control" name="disease" #disease="ngModel" [(ngModel)]="vacc.disease"
-                placeholder="{{disname}}" required>
-            <small class="form-text text-danger" *ngIf="disease.dirty && disease.invalid">Disease field can't be
-                empty</small>
-        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        #name="ngModel"
+        [(ngModel)]="vacc.name"
+        placeholder="{{ vaccname }}"
+        required
+      />
+      <small class="form-text text-danger" *ngIf="name.dirty && name.invalid">
+        Vaccine name can't be empty
+      </small>
+    </div>
+    <div class="form-group">
+      <label>Disease</label>
+      <input
+        type="text"
+        class="form-control"
+        name="disease"
+        #disease="ngModel"
+        [(ngModel)]="vacc.disease"
+        placeholder="{{ disname }}"
+        required
+      />
+      <small
+        class="form-text text-danger"
+        *ngIf="disease.dirty && disease.invalid"
+      >
+        Disease field can't be empty
+      </small>
+    </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="vaccEditForm.pristin || vaccEditForm.untouched">Update
-            Vaccine</button>
-    </form>
-    <div class="alert alert-success my-3" role="alert" *ngIf="successFlag">
-        <div class="d-flex justify-content-start align-items-center">
-            <i class="material-icons md-28 mr-3" style="font-size: 28px;">
-                check_circle_outline
-            </i>
-            <h4 class="alert-heading mb-0">
-                Update Successful
-            </h4>
-        </div>
-        <hr />
-        <p class="mb-0">Vaccine Details Updated Successful</p>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="vaccEditForm.pristin || vaccEditForm.untouched"
+    >
+      Update Vaccine
+    </button>
+  </form>
+  <div class="alert alert-success my-3" role="alert" *ngIf="successFlag">
+    <div class="d-flex justify-content-start align-items-center">
+      <i class="material-icons md-28 mr-3" style="font-size: 28px">
+        check_circle_outline
+      </i>
+      <h4 class="alert-heading mb-0">Update Successful</h4>
     </div>
-    <div class="alert alert-danger my-3" role="alert" *ngIf="errorFlag">
-        <div class="d-flex justify-content-start align-items-center">
-            <i class="material-icons md-28 mr-3" style="font-size: 28px;">
-                highlight_off
-            </i>
-            <h4 class="alert-heading mb-0">
-                Update Unsuccessful
-            </h4>
-        </div>
-        <hr />
-        <p class="mb-0">Unable To Update Vaccine Details</p>
+    <hr />
+    <p class="mb-0">Vaccine Details Updated Successful</p>
+  </div>
+  <div class="alert alert-danger my-3" role="alert" *ngIf="errorFlag">
+    <div class="d-flex justify-content-start align-items-center">
+      <i class="material-icons md-28 mr-3" style="font-size: 28px">
+        highlight_off
+      </i>
+      <h4 class="alert-heading mb-0">Update Unsuccessful</h4>
     </div>
+    <hr />
+    <p class="mb-0">Unable To Update Vaccine Details</p>
+  </div>
 </div>
