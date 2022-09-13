@@ -34,111 +34,111 @@ export class AuthService {
 
   signInOrg(login) {
     return this.http.post(
-      'http://localhost:8080/org/signin',
+      'http://localhost:8081/org/signin',
       login,
       httpOptions
     );
   }
   signInPat(login) {
     return this.http.post(
-      'http://localhost:8080/patient/signin',
+      'http://localhost:8081/patient/signin',
       login,
       httpOptions
     );
   }
   patRegister(pat) {
-    return this.http.post('http://localhost:8080/patient/signup', pat);
+    return this.http.post('http://localhost:8081/patient/signup', pat);
   }
   orgRegister(org) {
-    return this.http.post('http://localhost:8080/org/signup', org);
+    return this.http.post('http://localhost:8081/org/signup', org);
   }
   patUpdate(pat) {
     return this.http.put(
-      'http://localhost:8080/patient/update',
+      'http://localhost:8081/patient/update',
       pat,
       httpOptions
     );
   }
   showPartners() {
-    return this.http.get('http://localhost:8080/partners');
+    return this.http.get('http://localhost:8081/partners');
   }
   showVaccines() {
-    return this.http.get('http://localhost:8080/vaccines');
+    return this.http.get('http://localhost:8081/vaccines');
   }
   showVaccinesOrgName() {
-    return this.http.get('http://localhost:8080/partners');
+    return this.http.get('http://localhost:8081/partners');
   }
   getOrg(id) {
-    return this.http.get('http://localhost:8080/org/' + id);
+    return this.http.get('http://localhost:8081/org/' + id);
   }
   addVaccine(vaccine: Vaccine) {
     return this.http.post(
-      'http://localhost:8080/vaccine/add',
+      'http://localhost:8081/vaccine/add',
       vaccine,
       httpOptions
     );
   }
   getResult(id) {
     return this.http.get(
-      'http://localhost:8080/patient/' + id + '/report',
+      'http://localhost:8081/patient/' + id + '/report',
       httpOptions
     );
   }
   getVacc(id) {
-    return this.http.get('http://localhost:8080/vaccine/id/' + id);
+    return this.http.get('http://localhost:8081/vaccine/id/' + id);
   }
   getVaccineByOrgId(id) {
     return this.http.get(
-      'http://localhost:8080/org/' + id + '/vaccines',
+      'http://localhost:8081/org/' + id + '/vaccines',
       httpOptions
     );
   }
   getVaccD(disease) {
     return this.http.get(
-      'http://localhost:8080/vaccine/disease/' + disease,
+      'http://localhost:8081/vaccine/disease/' + disease,
       httpOptions
     );
   }
   getDistinctDisease() {
-    return this.http.get('http://localhost:8080/distinct/disease');
+    return this.http.get('http://localhost:8081/distinct/disease');
   }
   orgUpdate(org) {
-    return this.http.put('http://localhost:8080/org/update', org, httpOptions);
+    return this.http.put('http://localhost:8081/org/update', org, httpOptions);
   }
   vaccUpdate(vacc) {
     return this.http.put(
-      'http://localhost:8080/vaccine/update',
+      'http://localhost:8081/vaccine/update',
       vacc,
       httpOptions
     );
   }
   getPatientsByDisease(disease) {
     return this.http.get(
-      'http://localhost:8080/unenrolledpatients/' + disease,
+      'http://localhost:8081/unenrolledpatients/' + disease,
       httpOptions
     );
   }
   getPatient(id) {
-    return this.http.get('http://localhost:8080/patient/' + id, httpOptions);
+    return this.http.get('http://localhost:8081/patient/' + id, httpOptions);
   }
   addReport(rep) {
-    return this.http.post('http://localhost:8080/report/add', rep, httpOptions);
+    return this.http.post('http://localhost:8081/report/add', rep, httpOptions);
   }
   getVacReport(id) {
     return this.http.get(
-      'http://localhost:8080/report/vaccine/' + id,
+      'http://localhost:8081/report/vaccine/' + id,
       httpOptions
     );
   }
   getPatientByOrgId(id) {
     return this.http.get(
-      'http://localhost:8080/org/' + id + '/patients',
+      'http://localhost:8081/org/' + id + '/patients',
       httpOptions
     );
   }
   updateReport(report) {
     return this.http.put(
-      'http://localhost:8080/report/update',
+      'http://localhost:8081/report/update',
       report,
       httpOptions
     );

@@ -9,9 +9,9 @@ import { Patient } from '../model/Patient';
 })
 export class NavbarComponent {
   constructor(public auth: AuthService) {}
-  logout() {
+  () {
     this.auth.currentuser = null;
     this.auth.currentorg = null;
-    this.auth.isLoggedIn = false;
+    logoutthis.auth.isLoggedIn = false;
   }
 }
